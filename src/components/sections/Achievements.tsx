@@ -55,8 +55,10 @@ export default function Achievements() {
               <div className="bg-white rounded-2xl p-6 md:p-8 shadow-sm h-full">
                 <div className="flex items-center gap-3 mb-6">
                   <div className="w-10 h-10 rounded-full bg-rose-500 text-white flex items-center justify-center">
-                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
+                    {/* 트로피 아이콘 */}
+                    <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M12 15a2 2 0 100-4 2 2 0 000 4z" />
+                      <path fillRule="evenodd" d="M6 2a2 2 0 00-2 2v1H3a1 1 0 000 2h1v1a7.003 7.003 0 005.744 6.876A4.002 4.002 0 0011 19.465V21H9a1 1 0 100 2h6a1 1 0 100-2h-2v-1.535a4.002 4.002 0 001.256-4.589A7.003 7.003 0 0020 8V7h1a1 1 0 100-2h-1V4a2 2 0 00-2-2H6zm0 2h12v4a5 5 0 01-10 0V4z" clipRule="evenodd" />
                     </svg>
                   </div>
                   <h3 className="text-xl font-bold text-gray-900">수상</h3>
@@ -71,7 +73,10 @@ export default function Achievements() {
                       viewport={{ once: true }}
                       transition={{ delay: 0.1 * index }}
                     >
-                      <span className="font-medium text-gray-900">{item.title}</span>
+                      <div className="flex flex-col">
+                        <span className="font-medium text-gray-900">{item.title}</span>
+                        <span className="text-xs text-gray-500">{item.date}</span>
+                      </div>
                       <span className="px-3 py-1 bg-rose-100 text-rose-600 text-sm font-medium rounded-full">
                         {item.prize}
                       </span>

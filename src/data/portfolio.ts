@@ -22,8 +22,8 @@ export const aboutData = {
   details: [
     { icon: "user", label: "이름", value: "조영찬" },
     { icon: "email", label: "이메일", value: "tigerbone@naver.com" },
-    { icon: "location", label: "위치", value: "서울특별시" },
-    { icon: "education", label: "학력", value: "건국대학교 스마트ICT융합공학과" },
+    { icon: "location", label: "위치", value: "서울특별시 광진구 / 충청북도 충주시" },
+    { icon: "education", label: "학력", value: "건국대학교 서울캠퍼스 스마트ICT융합공학과" },
   ],
 };
 
@@ -178,14 +178,20 @@ export const certificateData = [
 ];
 
 // 수상
-export const awardData = [
+export const awardData: {
+  title: string;
+  prize: string;
+  date: string;
+}[] = [
   {
     title: "코레일 내일로 해커톤",
     prize: "장려상",
+    date: "2025.12",
   },
   {
     title: "충주 청년 창업 아이디어 캠프",
     prize: "최우수상",
+    date: "2026.01",
   },
 ];
 
