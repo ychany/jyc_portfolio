@@ -58,29 +58,31 @@ export default function About() {
           </div>
         </FadeIn>
 
-        {/* Profile Grid - 참고 사이트처럼 3x2 그리드 */}
+        {/* Profile Grid - 카드 배경으로 구분감 추가 */}
         <FadeIn delay={0.1}>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-10 mb-12">
-            {aboutData.details.map((item, index) => (
-              <motion.div
-                key={item.label}
-                className="flex items-start gap-5"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.1 * index }}
-              >
-                {/* 아이콘 */}
-                <div className="text-gray-700 flex-shrink-0">
-                  {icons[item.icon] || icons.user}
-                </div>
-                {/* 텍스트 */}
-                <div>
-                  <p className="text-base font-bold text-gray-900 mb-1">{item.label}</p>
-                  <p className="text-gray-600 whitespace-pre-line">{item.value}</p>
-                </div>
-              </motion.div>
-            ))}
+          <div className="bg-gray-50 rounded-2xl p-8 md:p-10 mb-12">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-8">
+              {aboutData.details.map((item, index) => (
+                <motion.div
+                  key={item.label}
+                  className="flex items-start gap-5"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 0.1 * index }}
+                >
+                  {/* 아이콘 */}
+                  <div className="text-gray-600 flex-shrink-0">
+                    {icons[item.icon] || icons.user}
+                  </div>
+                  {/* 텍스트 */}
+                  <div>
+                    <p className="text-base font-bold text-gray-900 mb-1">{item.label}</p>
+                    <p className="text-gray-600 whitespace-pre-line">{item.value}</p>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
           </div>
         </FadeIn>
 
