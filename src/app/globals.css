@@ -1,26 +1,187 @@
 @import "tailwindcss";
 
+@font-face {
+  font-family: 'Pretendard';
+  src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Pretendard';
+  src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Medium.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Pretendard';
+  src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-SemiBold.woff') format('woff');
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Pretendard';
+  src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Bold.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Pretendard';
+  src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-ExtraBold.woff') format('woff');
+  font-weight: 800;
+  font-style: normal;
+}
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Colors */
+  --color-white: #ffffff;
+  --color-black: #171717;
+  --color-gray-50: #fafafa;
+  --color-gray-100: #f5f5f5;
+  --color-gray-200: #e5e5e5;
+  --color-gray-400: #a3a3a3;
+  --color-gray-500: #737373;
+  --color-gray-600: #525252;
+  --color-gray-800: #262626;
+  --color-gray-900: #171717;
+  --color-dark: #1a1a1a;
+
+  /* Point Color - Mint/Teal */
+  --color-primary: #14b8a6;
+  --color-primary-light: #5eead4;
+  --color-primary-dark: #0d9488;
+
+  /* Section Backgrounds */
+  --bg-hero: #ffffff;
+  --bg-about: #ffffff;
+  --bg-skills: #14b8a6;
+  --bg-archiving: #1a1a1a;
+  --bg-projects: #ffffff;
+  --bg-career: #f5f5f5;
+  --bg-contact: #1a1a1a;
+
+  /* Typography */
+  --font-sans: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+
+  /* Spacing */
+  --section-padding-x: 1.5rem;
+  --section-padding-y: 5rem;
+  --max-width: 1200px;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-background: var(--color-white);
+  --color-foreground: var(--color-black);
+  --color-primary: var(--color-primary);
+  --font-sans: var(--font-sans);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--color-white);
+  color: var(--color-black);
+  font-family: var(--font-sans);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* Section Base Styles */
+.section {
+  width: 100%;
+  padding: var(--section-padding-y) var(--section-padding-x);
+}
+
+.section-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.section-title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 3rem;
+  position: relative;
+  display: inline-block;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 40px;
+  height: 4px;
+  background: var(--color-primary);
+  border-radius: 2px;
+}
+
+/* Skill Tag Colors */
+.tag-react { background: #61DAFB; color: #000; }
+.tag-nextjs { background: #000000; color: #fff; }
+.tag-typescript { background: #3178C6; color: #fff; }
+.tag-javascript { background: #F7DF1E; color: #000; }
+.tag-html { background: #E34F26; color: #fff; }
+.tag-css { background: #1572B6; color: #fff; }
+.tag-nodejs { background: #339933; color: #fff; }
+.tag-git { background: #F05032; color: #fff; }
+.tag-figma { background: #F24E1E; color: #fff; }
+.tag-python { background: #3776AB; color: #fff; }
+.tag-mysql { background: #4479A1; color: #fff; }
+.tag-mongodb { background: #47A248; color: #fff; }
+.tag-aws { background: #FF9900; color: #000; }
+.tag-docker { background: #2496ED; color: #fff; }
+.tag-tailwind { background: #06B6D4; color: #fff; }
+.tag-sass { background: #CC6699; color: #fff; }
+.tag-vue { background: #4FC08D; color: #fff; }
+.tag-redux { background: #764ABC; color: #fff; }
+
+/* Responsive */
+@media (min-width: 640px) {
+  :root {
+    --section-padding-x: 2rem;
+    --section-padding-y: 6rem;
+  }
+
+  .section-title {
+    font-size: 2.25rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  :root {
+    --section-padding-x: 4rem;
+    --section-padding-y: 8rem;
+  }
+
+  .section-title {
+    font-size: 2.5rem;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-gray-100);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-gray-400);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-gray-500);
 }
