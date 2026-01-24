@@ -100,7 +100,7 @@ export const projectsData: {
     techStack: ["Flutter", "Dart", "Firebase", "Riverpod"],
     github: "https://github.com/ychany/FootHub",
     demo: "",
-    period: "2024",
+    period: "2025",
     features: [
       "경기 직관 기록 작성 (사진, 좌석, 평점, MVP 등)",
       "실시간 경기 스코어 대시보드 (30초 자동 업데이트)",
@@ -119,7 +119,7 @@ export const projectsData: {
     techStack: ["React", "TypeScript", "Vite", "Tailwind CSS", "Firebase"],
     github: "https://github.com/ychany/dujjoncoo",
     demo: "https://dujjoncoo.vercel.app",
-    period: "2025.01",
+    period: "2026",
     features: [
       "터치/클릭/스페이스바 인터랙션 쿠키 먹기",
       "Firebase Presence 기반 실시간 동시 접속자 표시",
