@@ -23,6 +23,11 @@ const techTagColors: Record<string, string> = {
   "AWS": "tag-aws",
   "Vue": "tag-vue",
   "Redux": "tag-redux",
+  "Flutter": "tag-flutter",
+  "Dart": "tag-dart",
+  "Firebase": "tag-firebase",
+  "Django": "tag-django",
+  "Riverpod": "tag-flutter",
 };
 
 export default function Projects() {

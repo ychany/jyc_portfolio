@@ -90,7 +90,44 @@ export const projectsData: {
   period: string;
   features: string[];
 }[] = [
-  // 프로젝트는 나중에 추가
+  {
+    id: 1,
+    title: "FootHub",
+    subtitle: "축구 직관 기록 다이어리 앱",
+    description:
+      "축구 경기 직관 기록을 작성하고 관리할 수 있는 모바일 앱입니다. 경기 사진, 좌석 정보, 평점, MVP 선정 등 직관의 특별한 순간들을 기록하고, 실시간 경기 스코어와 리그 순위를 확인할 수 있습니다.",
+    image: "",
+    techStack: ["Flutter", "Dart", "Firebase", "Riverpod"],
+    github: "https://github.com/ychany/FootHub",
+    demo: "",
+    period: "2024",
+    features: [
+      "경기 직관 기록 작성 (사진, 좌석, 평점, MVP 등)",
+      "실시간 경기 스코어 대시보드 (30초 자동 업데이트)",
+      "유럽 5대 리그 및 K리그 지원",
+      "한국어/영어 다국어 지원",
+      "경기별 커뮤니티 댓글 기능",
+    ],
+  },
+  {
+    id: 2,
+    title: "두바이 왕자",
+    subtitle: "가상 두바이 쿠키 먹방 체험 웹앱",
+    description:
+      "6,000원짜리 두바이 쫀득쿠키를 무료로 먹어보는 가상 먹방 체험 웹앱입니다. 터치/클릭 인터랙션으로 쿠키를 먹고, 실시간 동시 접속자 수와 누적 섭취량을 확인할 수 있습니다.",
+    image: "",
+    techStack: ["React", "TypeScript", "Vite", "Tailwind CSS", "Firebase"],
+    github: "https://github.com/ychany/dujjoncoo",
+    demo: "https://dujjoncoo.vercel.app",
+    period: "2025.01",
+    features: [
+      "터치/클릭/스페이스바 인터랙션 쿠키 먹기",
+      "Firebase Presence 기반 실시간 동시 접속자 표시",
+      "일간/누적 쿠키 섭취량 통계",
+      "부스러기 파티클 애니메이션",
+      "토스 미니앱 연동",
+    ],
+  },
 ];
 
 // 경력
@@ -104,18 +141,16 @@ export const experienceData: {
 }[] = [
   {
     title: "서울소프트",
-    role: "개발자",
+    role: "모빌리티 개발팀 · Full-Stack Developer",
     period: "2025.02 - 현재",
-    description: "", // 회사/업무에 대한 간단한 설명
+    description:
+      "운수사(버스·택시) 대상 ERP 서비스를 개발·제공하는 IT 기업에서 Full-Stack 개발자로 근무 중입니다.",
     details: [
-      // 담당 업무를 여기에 추가
-      // 예: "React, TypeScript 기반 웹 애플리케이션 개발",
-      // 예: "RESTful API 설계 및 구현",
+      "배차, 급여, 자재, 인사관리 등 핵심 업무 모듈 개발 및 유지보수",
+      "Django 기반 MVT 패턴을 활용한 웹 서비스 개발",
+      "기존 레거시 시스템 분석 및 개선",
     ],
-    techStack: [
-      // 사용 기술 스택을 여기에 추가
-      // 예: "React", "TypeScript", "Python"
-    ],
+    techStack: ["Python", "Django", "JavaScript", "MySQL", "HTML5", "CSS3"],
   },
 ];
 
