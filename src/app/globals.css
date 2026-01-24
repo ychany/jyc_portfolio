@@ -144,6 +144,13 @@ body {
 .tag-sass { background: #CC6699; color: #fff; }
 .tag-vue { background: #4FC08D; color: #fff; }
 .tag-redux { background: #764ABC; color: #fff; }
+.tag-django { background: #092E20; color: #fff; }
+.tag-firebase { background: #FFCA28; color: #000; }
+.tag-flutter { background: #02569B; color: #fff; }
+.tag-dart { background: #0175C2; color: #fff; }
+.tag-github { background: #181717; color: #fff; }
+.tag-vercel { background: #000000; color: #fff; }
+.tag-vite { background: #646CFF; color: #fff; }
 
 /* Responsive */
 @media (min-width: 640px) {

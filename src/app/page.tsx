@@ -1,6 +1,7 @@
 import Header from "@/components/Header";
 import Hero from "@/components/sections/Hero";
 import About from "@/components/sections/About";
+import Achievements from "@/components/sections/Achievements";
 import Skills from "@/components/sections/Skills";
 import Archiving from "@/components/sections/Archiving";
 import Projects from "@/components/sections/Projects";
@@ -15,6 +16,7 @@ export default function Home() {
       <main>
         <Hero />
         <About />
+        <Achievements />
         <Skills />
         <Archiving />
         <Projects />

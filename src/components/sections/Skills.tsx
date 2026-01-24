@@ -9,6 +9,7 @@ const categoryLabels: Record<string, string> = {
   frontend: "Frontend",
   backend: "Backend",
   database: "Database",
+  mobile: "Mobile",
   tools: "Tools & Etc",
 };
 
