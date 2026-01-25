@@ -91,9 +91,30 @@ export const projectsData: {
   demo: string;
   period: string;
   features: string[];
+  award?: string;
 }[] = [
   {
     id: 1,
+    title: "코레일 동행열차",
+    subtitle: "AI 기반 커플 기차 여행 코스 추천 앱",
+    description:
+      "사랑하는 사람과 함께하는 특별한 기차 여행을 위한 앱으로, AI 기반 맞춤형 여행 코스 추천과 레일필름(포토카드) 생성 기능을 제공합니다.",
+    award: "코레일 내일로 해커톤 장려상",
+    image: "",
+    techStack: ["Flutter", "Dart", "Provider", "Naver Map API"],
+    github: "https://github.com/dusagong/korail_donghang_train_app",
+    demo: "",
+    period: "2025.12",
+    features: [
+      "AI 기반 맞춤형 여행 코스 추천 (만남승강장)",
+      "여행 사진으로 레일필름 생성 및 SNS 공유",
+      "스탬프 컬렉션 및 지역 제휴 쿠폰 발급",
+      "네이버 지도 연동 코스 경로 시각화",
+      "방문 장소 리뷰 작성 및 관리",
+    ],
+  },
+  {
+    id: 2,
     title: "FootHub",
     subtitle: "축구 직관 기록 다이어리 앱",
     description:
@@ -101,7 +122,7 @@ export const projectsData: {
     image: "",
     techStack: ["Flutter", "Dart", "Firebase", "Riverpod"],
     github: "https://github.com/ychany/FootHub",
-    demo: "",
+    demo: "https://apps.apple.com/kr/app/foothub/id6757123385",
     period: "2025",
     features: [
       "경기 직관 기록 작성 (사진, 좌석, 평점, MVP 등)",
@@ -112,7 +133,7 @@ export const projectsData: {
     ],
   },
   {
-    id: 2,
+    id: 3,
     title: "두바이 왕자",
     subtitle: "가상 두바이 쿠키 먹방 체험 웹앱",
     description:
