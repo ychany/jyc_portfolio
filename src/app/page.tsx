@@ -8,6 +8,7 @@ import Projects from "@/components/sections/Projects";
 import Career from "@/components/sections/Career";
 import Contact from "@/components/sections/Contact";
 import Footer from "@/components/sections/Footer";
+import ScrollToTop from "@/components/ui/ScrollToTop";
 
 export default function Home() {
   return (
@@ -24,6 +25,7 @@ export default function Home() {
         <Contact />
       </main>
       <Footer />
+      <ScrollToTop />
     </>
   );
 }
