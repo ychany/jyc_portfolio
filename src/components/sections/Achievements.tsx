@@ -38,7 +38,12 @@ export default function Achievements() {
                       viewport={{ once: true }}
                       transition={{ delay: 0.1 * index }}
                     >
-                      <span className="font-medium text-gray-900">{item.title}</span>
+                      <div className="flex flex-col">
+                        <span className="font-medium text-gray-900">{item.title}</span>
+                        {"issuer" in item && item.issuer && (
+                          <span className="text-xs text-gray-500">{item.issuer}</span>
+                        )}
+                      </div>
                       <span className="text-sm text-amber-600 font-medium bg-amber-50 px-3 py-1 rounded-full">
                         {item.date}
                       </span>

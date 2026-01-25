@@ -242,10 +242,12 @@ export const getEducationString = () => {
 export const certificateData = [
   {
     title: "데이터 분석 준전문가 (ADsP)",
+    issuer: "한국데이터산업진흥원",
     date: "2025.11",
   },
   {
     title: "정보처리산업기사",
+    issuer: "한국산업인력공단",
     date: "2025.09",
   },
 ];
