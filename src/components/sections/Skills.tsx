@@ -17,7 +17,7 @@ export default function Skills() {
   const categories = Object.entries(skillsData);
 
   return (
-    <section id="skills" className="py-20 md:py-32 bg-teal-500 relative overflow-hidden">
+    <section id="skills" className="py-12 md:py-16 bg-teal-500 relative overflow-hidden">
       {/* Background pattern */}
       <div className="absolute inset-0 opacity-10">
         <div

@@ -24,7 +24,7 @@ const icons: Record<string, React.ReactNode> = {
 
 export default function Archiving() {
   return (
-    <section id="archiving" className="py-16 md:py-24 bg-[#1a1a1a]">
+    <section id="archiving" className="py-10 md:py-12 bg-[#1a1a1a]">
       <div className="max-w-4xl mx-auto px-6">
         {/* Title */}
         <motion.h2

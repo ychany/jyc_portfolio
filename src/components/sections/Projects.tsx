@@ -32,7 +32,7 @@ const techTagColors: Record<string, string> = {
 
 export default function Projects() {
   return (
-    <section id="projects" className="py-20 md:py-32 bg-white">
+    <section id="projects" className="py-12 md:py-16 bg-white">
       <div className="max-w-6xl mx-auto px-6">
         <SectionTitle>Projects</SectionTitle>
 

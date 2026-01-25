@@ -40,7 +40,7 @@ const icons: Record<string, React.ReactNode> = {
 
 export default function About() {
   return (
-    <section id="about" className="py-20 md:py-32 bg-white">
+    <section id="about" className="py-12 md:py-16 bg-white">
       <div className="max-w-5xl mx-auto px-6">
         <SectionTitle>About Me</SectionTitle>
 

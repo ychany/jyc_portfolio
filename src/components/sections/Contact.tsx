@@ -6,7 +6,7 @@ import { contactData, profileData } from "@/data/portfolio";
 
 export default function Contact() {
   return (
-    <section id="contact" className="py-20 md:py-32 bg-[#1a1a1a] relative overflow-hidden">
+    <section id="contact" className="py-12 md:py-16 bg-[#1a1a1a] relative overflow-hidden">
       {/* Background decoration */}
       <div className="absolute inset-0 opacity-5">
         <div

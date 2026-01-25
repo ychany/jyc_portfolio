@@ -11,7 +11,7 @@ export default function Achievements() {
   if (!hasContent) return null;
 
   return (
-    <section id="achievements" className="py-20 md:py-32 bg-gray-50">
+    <section id="achievements" className="py-12 md:py-16 bg-gray-50">
       <div className="max-w-6xl mx-auto px-6">
         <SectionTitle>Achievements</SectionTitle>
 
