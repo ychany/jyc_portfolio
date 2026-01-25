@@ -151,6 +151,24 @@ export const projectsData: {
       "토스 미니앱 연동",
     ],
   },
+  {
+    id: 4,
+    title: "Portfolio",
+    subtitle: "개인 포트폴리오 웹사이트",
+    description:
+      "Next.js 15와 Tailwind CSS를 활용하여 제작한 개인 포트폴리오 웹사이트입니다. 반응형 디자인과 부드러운 스크롤 애니메이션을 적용하였으며, 데이터 기반으로 콘텐츠를 관리합니다.",
+    image: "",
+    techStack: ["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion"],
+    github: "https://github.com/ychany/jyc_portfolio",
+    demo: "https://jyc-portfolio.vercel.app",
+    period: "2026.01",
+    features: [
+      "반응형 디자인 (모바일, 태블릿, 데스크톱)",
+      "Framer Motion 스크롤 애니메이션",
+      "섹션별 구성 (About, Skills, Projects, Career, Contact)",
+      "데이터 기반 콘텐츠 관리",
+    ],
+  },
 ];
 
 // 경력
