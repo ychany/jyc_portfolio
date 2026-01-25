@@ -168,7 +168,28 @@ export default function Projects() {
                 </motion.div>
 
                 {/* Content */}
-                <div className={index % 2 === 1 ? "md:order-1" : ""}>
+                <div className={`relative ${index % 2 === 1 ? "md:order-1" : ""}`}>
+                  {/* Detail Button - Top Right */}
+                  <button
+                    onClick={() => openModal(project)}
+                    className="absolute top-0 right-0 inline-flex items-center gap-1.5 px-3 py-1.5 bg-teal-500 hover:bg-teal-600 rounded-full text-white text-sm font-medium transition-colors"
+                  >
+                    <svg
+                      className="w-4 h-4"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                      />
+                    </svg>
+                    상세 보기
+                  </button>
+
                   {/* Period */}
                   <p className="text-teal-600 font-medium text-sm mb-2">
                     {project.period}
@@ -237,26 +258,6 @@ export default function Projects() {
 
                   {/* Links */}
                   <div className="flex flex-wrap items-center gap-3">
-                    {/* Detail Button */}
-                    <button
-                      onClick={() => openModal(project)}
-                      className="inline-flex items-center gap-2 px-4 py-2 border-2 border-teal-500 text-teal-600 text-sm font-medium rounded-full hover:bg-teal-500 hover:text-white transition-colors"
-                    >
-                      <svg
-                        className="w-4 h-4"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-                        />
-                      </svg>
-                      상세 보기
-                    </button>
                     {project.demo &&
                       project.demo.includes("apps.apple.com") && (
                         <a
