@@ -5,7 +5,17 @@ import { profileData } from "@/data/portfolio";
 
 export default function Hero() {
   const scrollToAbout = () => {
-    document.getElementById("about")?.scrollIntoView({ behavior: "smooth" });
+    const aboutSection = document.getElementById("about");
+    if (aboutSection) {
+      const headerOffset = 80;
+      const elementPosition = aboutSection.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.scrollY - headerOffset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: "smooth"
+      });
+    }
   };
 
   return (
