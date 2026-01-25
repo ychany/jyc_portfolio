@@ -17,7 +17,7 @@ export default function Footer() {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
           >
-            © {currentYear} {profileData.name}. All rights reserved.
+            © {currentYear} JO YEONG CHAN. All rights reserved.
           </motion.p>
 
           {/* Quick Links */}
