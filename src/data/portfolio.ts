@@ -13,20 +13,25 @@ export const profileData = {
   location: "Seoul, South Korea",
 };
 
+// aboutData의 details를 동적으로 생성하는 함수
+const getAboutDetails = () => [
+  { icon: "user", label: "이름", value: "조영찬" },
+  { icon: "calendar", label: "생년월일", value: "04.04.03" },
+  { icon: "location", label: "위치", value: "서울특별시 광진구" },
+  { icon: "phone", label: "연락처", value: "010-9855-5344" },
+  { icon: "email", label: "이메일", value: "tigerbone@naver.com" },
+  { icon: "education", label: "학력", value: getEducationString() },
+];
+
 export const aboutData = {
   introduction: `안녕하세요! 끊임없이 성장하는 개발자 조영찬입니다.
 
 다양한 기술 스택을 활용하여 웹과 앱 서비스를 개발하고 있으며,
 새로운 기술을 배우고 적용하는 것에 열정을 가지고 있습니다.`,
 
-  details: [
-    { icon: "user", label: "이름", value: "조영찬" },
-    { icon: "calendar", label: "생년월일", value: "04.04.03" },
-    { icon: "location", label: "위치", value: "서울특별시 광진구" },
-    { icon: "phone", label: "연락처", value: "010-9855-5344" },
-    { icon: "email", label: "이메일", value: "tigerbone@naver.com" },
-    { icon: "education", label: "학력", value: "건국대학교 서울캠퍼스\n(스마트ICT융합공학과)" },
-  ],
+  get details() {
+    return getAboutDetails();
+  },
 };
 
 export const skillsData = {
@@ -199,12 +204,27 @@ export const experienceData: {
 export const educationData = [
   {
     title: "건국대학교 서울캠퍼스",
-    role: "스마트ICT융합공학과",
+    major: "스마트ICT융합공학과",
+    minor: "문화콘텐츠학과",
+    role: "스마트ICT융합공학과 (부전공: 문화콘텐츠학과)",
     period: "2023 - 현재",
     description: "23학번 재학 중",
     details: [],
   },
 ];
+
+// 학력 정보를 aboutData용 문자열로 변환하는 함수
+export const getEducationString = () => {
+  return educationData
+    .map((edu) => {
+      let result = edu.title + "\n" + edu.major;
+      if (edu.minor) {
+        result += `\n(부전공: ${edu.minor})`;
+      }
+      return result;
+    })
+    .join("\n\n");
+};
 
 // 자격증
 export const certificateData = [
