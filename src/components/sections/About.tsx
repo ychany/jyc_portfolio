@@ -47,13 +47,8 @@ export default function About() {
         {/* 소개글 */}
         <FadeIn delay={0}>
           <div className="mb-12">
-            <div className="relative">
-              <span className="absolute -top-4 -left-4 text-8xl text-teal-100 font-serif leading-none select-none">
-                "
-              </span>
-              <div className="relative z-10 text-lg text-gray-600 leading-relaxed whitespace-pre-line pl-4 border-l-4 border-teal-500 max-w-3xl">
-                {aboutData.introduction}
-              </div>
+            <div className="text-lg text-gray-600 leading-relaxed whitespace-pre-line pl-6 border-l-4 border-teal-500 max-w-3xl">
+              {aboutData.introduction}
             </div>
           </div>
         </FadeIn>

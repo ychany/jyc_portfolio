@@ -11,7 +11,7 @@ export default function Hero() {
   return (
     <section className="relative min-h-screen flex items-center justify-center bg-white overflow-hidden">
       {/* Subtle grid background */}
-      <div className="absolute inset-0 opacity-[0.03]">
+      <div className="absolute inset-0 opacity-[0.05]">
         <div
           className="w-full h-full"
           style={{
