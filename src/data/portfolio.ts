@@ -91,12 +91,15 @@ export const projectsData: {
   subtitle: string;
   description: string;
   image: string;
+  images?: string[];
   techStack: string[];
   github: string;
   demo: string;
   period: string;
   features: string[];
   award?: string;
+  role?: string;
+  team?: string;
 }[] = [
   {
     id: 1,
@@ -106,10 +109,13 @@ export const projectsData: {
       "사랑하는 사람과 함께하는 특별한 기차 여행을 위한 앱으로, AI 기반 맞춤형 여행 코스 추천과 레일필름(포토카드) 생성 기능을 제공합니다.",
     award: "코레일 내일로 해커톤 장려상",
     image: "",
+    images: [],
     techStack: ["Flutter", "Dart", "Provider", "Naver Map API"],
     github: "https://github.com/dusagong/korail_donghang_train_app",
     demo: "",
     period: "2025.12",
+    role: "풀스택 개발",
+    team: "2인 팀 프로젝트",
     features: [
       "AI 기반 맞춤형 여행 코스 추천 (만남승강장)",
       "여행 사진으로 레일필름 생성 및 SNS 공유",
@@ -125,10 +131,12 @@ export const projectsData: {
     description:
       "축구 경기 직관 기록을 작성하고 관리할 수 있는 모바일 앱입니다. 경기 사진, 좌석 정보, 평점, MVP 선정 등 직관의 특별한 순간들을 기록하고, 실시간 경기 스코어와 리그 순위를 확인할 수 있습니다.",
     image: "",
+    images: [],
     techStack: ["Flutter", "Dart", "Firebase", "Riverpod"],
     github: "https://github.com/ychany/FootHub",
     demo: "https://apps.apple.com/kr/app/foothub/id6757123385",
     period: "2025",
+    role: "1인 개발 (기획, 디자인, 개발)",
     features: [
       "경기 직관 기록 작성 (사진, 좌석, 평점, MVP 등)",
       "실시간 경기 스코어 대시보드 (30초 자동 업데이트)",
@@ -144,10 +152,12 @@ export const projectsData: {
     description:
       "6,000원짜리 두바이 쫀득쿠키를 무료로 먹어보는 가상 먹방 체험 웹앱입니다. 터치/클릭 인터랙션으로 쿠키를 먹고, 실시간 동시 접속자 수와 누적 섭취량을 확인할 수 있습니다.",
     image: "",
+    images: [],
     techStack: ["React", "TypeScript", "Vite", "Tailwind CSS", "Firebase"],
     github: "https://github.com/ychany/dujjoncoo",
     demo: "https://dujjoncoo.vercel.app",
     period: "2026",
+    role: "1인 개발",
     features: [
       "터치/클릭/스페이스바 인터랙션 쿠키 먹기",
       "Firebase Presence 기반 실시간 동시 접속자 표시",
@@ -163,10 +173,12 @@ export const projectsData: {
     description:
       "Next.js 15와 Tailwind CSS를 활용하여 제작한 개인 포트폴리오 웹사이트입니다. 반응형 디자인과 부드러운 스크롤 애니메이션을 적용하였으며, 데이터 기반으로 콘텐츠를 관리합니다.",
     image: "",
+    images: [],
     techStack: ["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion"],
     github: "https://github.com/ychany/jyc_portfolio",
     demo: "https://jyc-portfolio.vercel.app",
     period: "2026.01",
+    role: "1인 개발",
     features: [
       "반응형 디자인 (모바일, 태블릿, 데스크톱)",
       "Framer Motion 스크롤 애니메이션",
