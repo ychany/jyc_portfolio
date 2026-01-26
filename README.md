@@ -23,6 +23,7 @@
 ## Features
 
 - **반응형 디자인** - 모바일, 태블릿, 데스크톱 지원
+- **다크모드 지원** - 시스템 설정 연동 + 수동 토글
 - **부드러운 애니메이션** - Framer Motion 기반 스크롤 애니메이션
 - **프로젝트 상세 모달** - 프로젝트별 상세 정보 모달 팝업
 - **데이터 기반 관리** - `portfolio.ts` 파일 수정으로 콘텐츠 관리
@@ -79,7 +80,8 @@ src/
 │       ├── FadeIn.tsx
 │       ├── SectionTitle.tsx
 │       ├── ProjectModal.tsx
-│       └── ScrollToTop.tsx
+│       ├── ScrollToTop.tsx
+│       └── ThemeToggle.tsx
 └── data/
     └── portfolio.ts        # 포트폴리오 데이터
 ```
