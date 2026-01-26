@@ -40,14 +40,14 @@ const icons: Record<string, React.ReactNode> = {
 
 export default function About() {
   return (
-    <section id="about" className="py-12 md:py-16 bg-white">
+    <section id="about" className="py-12 md:py-16 bg-white dark:bg-gray-900">
       <div className="max-w-5xl mx-auto px-6">
         <SectionTitle>About Me</SectionTitle>
 
         {/* 소개글 */}
         <FadeIn delay={0}>
           <div className="mb-12">
-            <div className="text-lg text-gray-600 leading-relaxed whitespace-pre-line pl-6 border-l-4 border-teal-500 max-w-3xl">
+            <div className="text-lg text-gray-600 dark:text-gray-300 leading-relaxed whitespace-pre-line pl-6 border-l-4 border-teal-500 max-w-3xl">
               {aboutData.introduction}
             </div>
           </div>
@@ -55,7 +55,7 @@ export default function About() {
 
         {/* Profile Grid - 카드 배경으로 구분감 추가 */}
         <FadeIn delay={0.1}>
-          <div className="bg-gray-50 rounded-2xl p-8 md:p-10 mb-12">
+          <div className="bg-gray-50 dark:bg-gray-800 rounded-2xl p-8 md:p-10 mb-12">
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-8">
               {aboutData.details.map((item, index) => (
                 <motion.div
@@ -67,13 +67,13 @@ export default function About() {
                   transition={{ delay: 0.1 * index }}
                 >
                   {/* 아이콘 */}
-                  <div className="text-gray-600 flex-shrink-0">
+                  <div className="text-gray-600 dark:text-gray-400 flex-shrink-0">
                     {icons[item.icon] || icons.user}
                   </div>
                   {/* 텍스트 */}
                   <div>
-                    <p className="text-base font-bold text-gray-900 mb-1">{item.label}</p>
-                    <p className="text-gray-600 whitespace-pre-line">{item.value}</p>
+                    <p className="text-base font-bold text-gray-900 dark:text-white mb-1">{item.label}</p>
+                    <p className="text-gray-600 dark:text-gray-300 whitespace-pre-line">{item.value}</p>
                   </div>
                 </motion.div>
               ))}

@@ -11,7 +11,7 @@ export default function SectionTitle({ children, light = false }: SectionTitlePr
   return (
     <motion.h2
       className={`text-3xl md:text-4xl font-bold mb-12 relative inline-block ${
-        light ? "text-white" : "text-gray-900"
+        light ? "text-white" : "text-gray-900 dark:text-white"
       }`}
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}

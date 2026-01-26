@@ -19,13 +19,13 @@ export default function Hero() {
   };
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center bg-white overflow-hidden">
+    <section className="relative min-h-screen flex items-center justify-center bg-white dark:bg-gray-900 overflow-hidden">
       {/* Subtle grid background */}
       <div className="absolute inset-0 opacity-[0.05]">
         <div
           className="w-full h-full"
           style={{
-            backgroundImage: `linear-gradient(#171717 1px, transparent 1px), linear-gradient(90deg, #171717 1px, transparent 1px)`,
+            backgroundImage: `linear-gradient(var(--grid-color, #171717) 1px, transparent 1px), linear-gradient(90deg, var(--grid-color, #171717) 1px, transparent 1px)`,
             backgroundSize: "60px 60px",
           }}
         />
@@ -48,7 +48,7 @@ export default function Hero() {
 
         {/* Name */}
         <motion.h1
-          className="text-5xl md:text-7xl font-extrabold text-gray-900 mb-4"
+          className="text-5xl md:text-7xl font-extrabold text-gray-900 dark:text-white mb-4"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.3 }}
@@ -59,7 +59,7 @@ export default function Hero() {
 
         {/* Role */}
         <motion.p
-          className="text-2xl md:text-3xl font-semibold text-gray-700 mb-6"
+          className="text-2xl md:text-3xl font-semibold text-gray-700 dark:text-gray-300 mb-6"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.4 }}
@@ -69,7 +69,7 @@ export default function Hero() {
 
         {/* Tagline */}
         <motion.p
-          className="text-lg md:text-xl text-gray-500 max-w-2xl mx-auto mb-12"
+          className="text-lg md:text-xl text-gray-500 dark:text-gray-400 max-w-2xl mx-auto mb-12"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.5 }}
@@ -96,7 +96,7 @@ export default function Hero() {
             href={profileData.github}
             target="_blank"
             rel="noopener noreferrer"
-            className="px-8 py-4 border-2 border-gray-300 text-gray-700 font-semibold rounded-full hover:border-teal-500 hover:text-teal-600 transition-colors"
+            className="px-8 py-4 border-2 border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 font-semibold rounded-full hover:border-teal-500 hover:text-teal-600 transition-colors"
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
           >
@@ -113,7 +113,7 @@ export default function Hero() {
         transition={{ delay: 1.2, duration: 0.5 }}
       >
         <motion.div
-          className="w-6 h-10 border-2 border-gray-300 rounded-full flex justify-center pt-2"
+          className="w-6 h-10 border-2 border-gray-300 dark:border-gray-600 rounded-full flex justify-center pt-2"
           animate={{ y: [0, 8, 0] }}
           transition={{ duration: 1.5, repeat: Infinity }}
         >

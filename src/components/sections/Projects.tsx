@@ -48,7 +48,7 @@ export default function Projects() {
   };
 
   return (
-    <section id="projects" className="py-12 md:py-16 bg-white">
+    <section id="projects" className="py-12 md:py-16 bg-white dark:bg-gray-900">
       <div className="max-w-6xl mx-auto px-6">
         <SectionTitle>Projects</SectionTitle>
 
@@ -63,7 +63,7 @@ export default function Projects() {
               >
                 {/* Image */}
                 <motion.div
-                  className={`relative aspect-video bg-gray-100 rounded-2xl overflow-hidden group cursor-pointer ${
+                  className={`relative aspect-video bg-gray-100 dark:bg-gray-800 rounded-2xl overflow-hidden group cursor-pointer ${
                     index % 2 === 1 ? "md:order-2" : ""
                   }`}
                   whileHover={{ scale: 1.02 }}
@@ -197,7 +197,7 @@ export default function Projects() {
 
                   {/* Title */}
                   <h3
-                    className="text-2xl md:text-3xl font-bold text-gray-900 mb-2 cursor-pointer hover:text-teal-600 transition-colors"
+                    className="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white mb-2 cursor-pointer hover:text-teal-600 transition-colors"
                     onClick={() => openModal(project)}
                   >
                     {project.title}
@@ -205,7 +205,7 @@ export default function Projects() {
 
                   {/* Subtitle */}
                   {project.subtitle && (
-                    <p className="text-gray-500 mb-3">{project.subtitle}</p>
+                    <p className="text-gray-500 dark:text-gray-400 mb-3">{project.subtitle}</p>
                   )}
 
                   {/* Award Badge */}
@@ -223,7 +223,7 @@ export default function Projects() {
                   )}
 
                   {/* Description */}
-                  <p className="text-gray-600 leading-relaxed mb-6">
+                  <p className="text-gray-600 dark:text-gray-300 leading-relaxed mb-6">
                     {project.description}
                   </p>
 
@@ -233,7 +233,7 @@ export default function Projects() {
                       {project.features.slice(0, 3).map((feature, i) => (
                         <li
                           key={i}
-                          className="flex items-start gap-2 text-gray-600 text-sm"
+                          className="flex items-start gap-2 text-gray-600 dark:text-gray-300 text-sm"
                         >
                           <span className="text-teal-500 mt-0.5">✓</span>
                           {feature}
@@ -302,7 +302,7 @@ export default function Projects() {
                         href={project.github}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center gap-2 px-4 py-2 bg-gray-900 text-white text-sm font-medium rounded-full hover:bg-gray-800 transition-colors"
+                        className="inline-flex items-center gap-2 px-4 py-2 bg-gray-900 text-white text-sm font-medium rounded-full hover:bg-gray-800 transition-colors dark:border dark:border-white/50"
                       >
                         <svg
                           className="w-4 h-4"

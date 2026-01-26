@@ -87,7 +87,7 @@ export default function ProjectModal({
             exit={{ opacity: 0 }}
           >
             <motion.div
-              className="bg-white rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto pointer-events-auto shadow-2xl"
+              className="bg-white dark:bg-gray-900 rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto pointer-events-auto shadow-2xl"
               initial={{ scale: 0.9, y: 20 }}
               animate={{ scale: 1, y: 0 }}
               exit={{ scale: 0.9, y: 20 }}
@@ -150,10 +150,10 @@ export default function ProjectModal({
                 {/* Title & Period */}
                 <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-2 mb-4">
                   <div>
-                    <h2 className="text-2xl md:text-3xl font-bold text-gray-900">
+                    <h2 className="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white">
                       {project.title}
                     </h2>
-                    <p className="text-gray-500 mt-1">{project.subtitle}</p>
+                    <p className="text-gray-500 dark:text-gray-400 mt-1">{project.subtitle}</p>
                   </div>
                   <span className="text-teal-600 font-medium text-sm md:text-base whitespace-nowrap">
                     {project.period}
@@ -164,7 +164,7 @@ export default function ProjectModal({
                 {(project.team || project.role) && (
                   <div className="flex flex-wrap gap-4 mb-4 text-sm">
                     {project.team && (
-                      <div className="flex items-center gap-2 text-gray-600">
+                      <div className="flex items-center gap-2 text-gray-600 dark:text-gray-300">
                         <svg
                           className="w-4 h-4"
                           fill="none"
@@ -182,7 +182,7 @@ export default function ProjectModal({
                       </div>
                     )}
                     {project.role && (
-                      <div className="flex items-center gap-2 text-gray-600">
+                      <div className="flex items-center gap-2 text-gray-600 dark:text-gray-300">
                         <svg
                           className="w-4 h-4"
                           fill="none"
@@ -203,21 +203,21 @@ export default function ProjectModal({
                 )}
 
                 {/* Description */}
-                <p className="text-gray-600 leading-relaxed mb-6">
+                <p className="text-gray-600 dark:text-gray-300 leading-relaxed mb-6">
                   {project.description}
                 </p>
 
                 {/* Screenshots Gallery */}
                 {project.images && project.images.length > 0 && (
                   <div className="mb-6">
-                    <h3 className="text-lg font-semibold text-gray-900 mb-3">
+                    <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">
                       Screenshots
                     </h3>
                     <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
                       {project.images.map((img, idx) => (
                         <div
                           key={idx}
-                          className="aspect-video bg-gray-100 rounded-lg overflow-hidden"
+                          className="aspect-video bg-gray-100 dark:bg-gray-800 rounded-lg overflow-hidden"
                         >
                           <img
                             src={img}
@@ -233,14 +233,14 @@ export default function ProjectModal({
                 {/* Features */}
                 {project.features.length > 0 && (
                   <div className="mb-6">
-                    <h3 className="text-lg font-semibold text-gray-900 mb-3">
+                    <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">
                       주요 기능
                     </h3>
                     <ul className="grid md:grid-cols-2 gap-2">
                       {project.features.map((feature, i) => (
                         <li
                           key={i}
-                          className="flex items-start gap-2 text-gray-600 text-sm"
+                          className="flex items-start gap-2 text-gray-600 dark:text-gray-300 text-sm"
                         >
                           <span className="text-teal-500 mt-0.5 flex-shrink-0">
                             ✓
@@ -254,7 +254,7 @@ export default function ProjectModal({
 
                 {/* Tech Stack */}
                 <div className="mb-6">
-                  <h3 className="text-lg font-semibold text-gray-900 mb-3">
+                  <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">
                     기술 스택
                   </h3>
                   <div className="flex flex-wrap gap-2">
@@ -272,7 +272,7 @@ export default function ProjectModal({
                 </div>
 
                 {/* Links */}
-                <div className="flex flex-wrap gap-3 pt-4 border-t border-gray-200">
+                <div className="flex flex-wrap gap-3 pt-4 border-t border-gray-200 dark:border-gray-700">
                   {project.demo && project.demo.includes("apps.apple.com") && (
                     <a
                       href={project.demo}
@@ -315,7 +315,7 @@ export default function ProjectModal({
                       href={project.github}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 px-5 py-2.5 bg-gray-900 text-white font-medium rounded-full hover:bg-gray-800 transition-colors"
+                      className="inline-flex items-center gap-2 px-5 py-2.5 bg-gray-900 text-white font-medium rounded-full hover:bg-gray-800 transition-colors dark:border dark:border-white/50"
                     >
                       <svg
                         className="w-5 h-5"

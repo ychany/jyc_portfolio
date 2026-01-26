@@ -9,7 +9,7 @@ export default function Career() {
   if (experienceData.length === 0) return null;
 
   return (
-    <section id="career" className="py-12 md:py-16 bg-gray-50">
+    <section id="career" className="py-12 md:py-16 bg-gray-50 dark:bg-gray-800">
       <div className="max-w-4xl mx-auto px-6">
         <SectionTitle>Career</SectionTitle>
 
@@ -17,7 +17,7 @@ export default function Career() {
           {experienceData.map((item, index) => (
             <FadeIn key={index} delay={0.1 * index}>
               <motion.div
-                className="bg-white rounded-2xl p-6 md:p-8 shadow-sm"
+                className="bg-white dark:bg-gray-900 rounded-2xl p-6 md:p-8 shadow-sm"
                 whileHover={{ scale: 1.01 }}
                 transition={{ duration: 0.2 }}
               >
@@ -30,12 +30,12 @@ export default function Career() {
                       </svg>
                     </div>
                     <div>
-                      <h3 className="text-xl font-bold text-gray-900">{item.title}</h3>
-                      <p className="text-gray-600">{item.role}</p>
+                      <h3 className="text-xl font-bold text-gray-900 dark:text-white">{item.title}</h3>
+                      <p className="text-gray-600 dark:text-gray-300">{item.role}</p>
                     </div>
                   </div>
                   <div className="md:text-right">
-                    <span className="inline-block px-4 py-2 bg-teal-50 text-teal-600 font-medium rounded-full text-sm">
+                    <span className="inline-block px-4 py-2 bg-teal-50 dark:bg-teal-900/30 text-teal-600 dark:text-teal-400 font-medium rounded-full text-sm">
                       {item.period}
                     </span>
                   </div>
@@ -43,7 +43,7 @@ export default function Career() {
 
                 {/* 설명 영역 */}
                 {item.description && (
-                  <p className="mt-4 ml-16 text-gray-600 leading-relaxed">
+                  <p className="mt-4 ml-16 text-gray-600 dark:text-gray-300 leading-relaxed">
                     {item.description}
                   </p>
                 )}
@@ -51,10 +51,10 @@ export default function Career() {
                 {/* 상세 내용 (담당 업무 등) */}
                 {item.details && item.details.length > 0 && (
                   <div className="mt-4 ml-16">
-                    <p className="text-sm font-medium text-gray-500 mb-2">주요 업무</p>
+                    <p className="text-sm font-medium text-gray-500 dark:text-gray-400 mb-2">주요 업무</p>
                     <ul className="space-y-2">
                       {item.details.map((detail, i) => (
-                        <li key={i} className="flex items-start gap-2 text-gray-600 text-sm">
+                        <li key={i} className="flex items-start gap-2 text-gray-600 dark:text-gray-300 text-sm">
                           <span className="text-teal-500 mt-0.5">•</span>
                           {detail}
                         </li>
@@ -66,12 +66,12 @@ export default function Career() {
                 {/* 사용 기술 스택 */}
                 {item.techStack && item.techStack.length > 0 && (
                   <div className="mt-4 ml-16">
-                    <p className="text-sm font-medium text-gray-500 mb-2">사용 기술</p>
+                    <p className="text-sm font-medium text-gray-500 dark:text-gray-400 mb-2">사용 기술</p>
                     <div className="flex flex-wrap gap-2">
                       {item.techStack.map((tech, i) => (
                         <span
                           key={i}
-                          className="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-xs font-medium"
+                          className="px-3 py-1 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-full text-xs font-medium"
                         >
                           {tech}
                         </span>
