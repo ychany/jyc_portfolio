@@ -88,7 +88,7 @@ export default function Projects() {
                   {/* Hover overlay */}
                   <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-4">
                     <motion.button
-                      className="w-12 h-12 bg-white rounded-full flex items-center justify-center text-gray-900 hover:bg-teal-500 hover:text-white transition-colors"
+                      className="w-12 h-12 bg-white rounded-full flex items-center justify-center text-gray-900 hover:bg-teal-500 hover:text-white transition-colors cursor-pointer"
                       whileHover={{ scale: 1.1 }}
                       whileTap={{ scale: 0.95 }}
                       onClick={(e) => {
@@ -121,7 +121,7 @@ export default function Projects() {
                         href={project.github}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="w-12 h-12 bg-white rounded-full flex items-center justify-center text-gray-900 hover:bg-teal-500 hover:text-white transition-colors"
+                        className="w-12 h-12 bg-white rounded-full flex items-center justify-center text-gray-900 hover:bg-teal-500 hover:text-white transition-colors cursor-pointer"
                         whileHover={{ scale: 1.1 }}
                         whileTap={{ scale: 0.95 }}
                         onClick={(e) => e.stopPropagation()}
@@ -144,7 +144,7 @@ export default function Projects() {
                         href={project.demo}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="w-12 h-12 bg-white rounded-full flex items-center justify-center text-gray-900 hover:bg-teal-500 hover:text-white transition-colors"
+                        className="w-12 h-12 bg-white rounded-full flex items-center justify-center text-gray-900 hover:bg-teal-500 hover:text-white transition-colors cursor-pointer"
                         whileHover={{ scale: 1.1 }}
                         whileTap={{ scale: 0.95 }}
                         onClick={(e) => e.stopPropagation()}
@@ -196,12 +196,14 @@ export default function Projects() {
                   </p>
 
                   {/* Title */}
-                  <h3
-                    className="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white mb-2 cursor-pointer hover:text-teal-600 transition-colors"
-                    onClick={() => openModal(project)}
-                  >
-                    {project.title}
-                  </h3>
+                  <div className="mb-2">
+                    <h3
+                      className="inline text-2xl md:text-3xl font-bold text-gray-900 dark:text-white cursor-pointer hover:text-teal-600 transition-colors"
+                      onClick={() => openModal(project)}
+                    >
+                      {project.title}
+                    </h3>
+                  </div>
 
                   {/* Subtitle */}
                   {project.subtitle && (
