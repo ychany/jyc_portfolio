@@ -80,3 +80,32 @@ export const languageData = [
   },
 ];
 ```
+
+---
+
+## 언어 전환 (i18n) 구현 방법
+
+### 방법 1: Context + JSON (간단한 방식)
+- `messages/ko.json`, `messages/en.json` 파일에 번역 텍스트 저장
+- React Context로 현재 언어 상태 관리
+- 버튼 클릭으로 언어 전환
+- URL 변경 없이 상태만 변경됨
+
+```typescript
+// messages/ko.json
+{ "hero.title": "안녕하세요", "about.title": "소개" }
+
+// messages/en.json
+{ "hero.title": "Hello", "about.title": "About" }
+```
+
+### 방법 2: next-intl 라이브러리 (URL 기반)
+- URL에 언어 코드 포함: `/ko/about`, `/en/about`
+- SEO에 유리 (검색엔진이 언어별 페이지 인식)
+- 브라우저 언어 자동 감지 가능
+- 설정이 더 복잡함
+
+### 중요 사항
+- **자동 번역 아님**: 두 방법 모두 직접 번역 파일을 작성해야 함
+- 모든 텍스트를 한국어/영어로 각각 준비 필요
+- 포트폴리오 규모에서는 **방법 1 (Context + JSON)** 권장
