@@ -89,7 +89,7 @@ export default function About() {
                 href={profileData.github}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-11 h-11 rounded-full bg-gray-900 text-white flex items-center justify-center hover:bg-teal-600 transition-colors"
+                className="w-11 h-11 rounded-full bg-gray-900 text-white flex items-center justify-center hover:bg-teal-600 transition-colors dark:border dark:border-white/30"
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.95 }}
               >
@@ -103,7 +103,7 @@ export default function About() {
                 href={profileData.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-11 h-11 rounded-full bg-gray-900 text-white flex items-center justify-center hover:bg-teal-600 transition-colors"
+                className="w-11 h-11 rounded-full bg-gray-900 text-white flex items-center justify-center hover:bg-teal-600 transition-colors dark:border dark:border-white/30"
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.95 }}
               >
@@ -117,7 +117,7 @@ export default function About() {
                 href={profileData.instagram}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-11 h-11 rounded-full bg-gray-900 text-white flex items-center justify-center hover:bg-teal-600 transition-colors"
+                className="w-11 h-11 rounded-full bg-gray-900 text-white flex items-center justify-center hover:bg-teal-600 transition-colors dark:border dark:border-white/30"
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.95 }}
               >
@@ -129,7 +129,7 @@ export default function About() {
             {profileData.email && (
               <motion.a
                 href={`mailto:${profileData.email}`}
-                className="w-11 h-11 rounded-full bg-gray-900 text-white flex items-center justify-center hover:bg-teal-600 transition-colors"
+                className="w-11 h-11 rounded-full bg-gray-900 text-white flex items-center justify-center hover:bg-teal-600 transition-colors dark:border dark:border-white/30"
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.95 }}
               >
