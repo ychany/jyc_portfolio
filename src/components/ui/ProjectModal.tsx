@@ -292,7 +292,7 @@ export default function ProjectModal({
                       href={project.demo}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 px-5 py-2.5 bg-teal-500 text-white font-medium rounded-full hover:bg-teal-600 transition-colors"
+                      className="inline-flex items-center gap-2 px-5 py-2.5 bg-teal-500 text-white font-medium rounded-full hover:bg-teal-600 transition-colors cursor-pointer"
                     >
                       <svg
                         className="w-5 h-5"
@@ -315,7 +315,7 @@ export default function ProjectModal({
                       href={project.github}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 px-5 py-2.5 bg-gray-900 text-white font-medium rounded-full hover:bg-gray-800 transition-colors dark:border dark:border-white/50"
+                      className="inline-flex items-center gap-2 px-5 py-2.5 bg-gray-900 text-white font-medium rounded-full hover:bg-gray-800 transition-colors cursor-pointer dark:border dark:border-white/50"
                     >
                       <svg
                         className="w-5 h-5"

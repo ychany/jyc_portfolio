@@ -172,7 +172,7 @@ export default function Projects() {
                   {/* Detail Button - Top Right */}
                   <button
                     onClick={() => openModal(project)}
-                    className="absolute top-0 right-0 inline-flex items-center gap-1.5 px-3 py-1.5 bg-teal-500 hover:bg-teal-600 rounded-full text-white text-sm font-medium transition-colors"
+                    className="absolute top-0 right-0 inline-flex items-center gap-1.5 px-3 py-1.5 bg-teal-500 hover:bg-teal-600 rounded-full text-white text-sm font-medium transition-colors cursor-pointer"
                   >
                     <svg
                       className="w-4 h-4"
@@ -279,7 +279,7 @@ export default function Projects() {
                           href={project.demo}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="inline-flex items-center gap-2 px-4 py-2 bg-teal-500 text-white text-sm font-medium rounded-full hover:bg-teal-600 transition-colors"
+                          className="inline-flex items-center gap-2 px-4 py-2 bg-teal-500 text-white text-sm font-medium rounded-full hover:bg-teal-600 transition-colors cursor-pointer"
                         >
                           <svg
                             className="w-4 h-4"
@@ -302,7 +302,7 @@ export default function Projects() {
                         href={project.github}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center gap-2 px-4 py-2 bg-gray-900 text-white text-sm font-medium rounded-full hover:bg-gray-800 transition-colors dark:border dark:border-white/50"
+                        className="inline-flex items-center gap-2 px-4 py-2 bg-gray-900 text-white text-sm font-medium rounded-full hover:bg-gray-800 transition-colors cursor-pointer dark:border dark:border-white/50"
                       >
                         <svg
                           className="w-4 h-4"
