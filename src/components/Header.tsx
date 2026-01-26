@@ -27,6 +27,22 @@ export default function Header() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const scrollToSection = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    e.preventDefault();
+    const targetId = href.replace("#", "");
+    const targetSection = document.getElementById(targetId);
+    if (targetSection) {
+      const headerOffset = 70;
+      const elementPosition = targetSection.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.scrollY - headerOffset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: "smooth"
+      });
+    }
+  };
+
   return (
     <>
       <motion.header
@@ -59,6 +75,7 @@ export default function Header() {
                 <motion.a
                   key={item.label}
                   href={item.href}
+                  onClick={(e) => scrollToSection(e, item.href)}
                   className={`text-sm font-medium transition-colors hover:text-teal-600 ${
                     isScrolled ? "text-gray-600" : "text-gray-600"
                   }`}
@@ -127,7 +144,10 @@ export default function Header() {
                     initial={{ opacity: 0, x: -20 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: 0.1 * index }}
-                    onClick={() => setIsMobileMenuOpen(false)}
+                    onClick={(e) => {
+                      scrollToSection(e, item.href);
+                      setIsMobileMenuOpen(false);
+                    }}
                   >
                     {item.label}
                   </motion.a>
