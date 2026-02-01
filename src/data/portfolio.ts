@@ -95,6 +95,7 @@ export const projectsData: {
   techStack: string[];
   github: string;
   demo: string;
+  tossApp?: string;
   period: string;
   features: string[];
   award?: string;
@@ -156,6 +157,7 @@ export const projectsData: {
     techStack: ["React", "TypeScript", "Vite", "Tailwind CSS", "Firebase"],
     github: "https://github.com/ychany/dujjoncoo",
     demo: "https://dujjoncoo.vercel.app",
+    tossApp: "https://minion.toss.im/JesOF8A2",
     period: "2026",
     role: "1인 개발",
     features: [

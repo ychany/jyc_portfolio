@@ -320,6 +320,21 @@ export default function Projects() {
                         GitHub
                       </a>
                     )}
+                    {project.tossApp && (
+                      <a
+                        href={project.tossApp}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 px-4 py-2 bg-white text-[#0064FF] text-sm font-medium rounded-full hover:bg-gray-100 transition-colors cursor-pointer border border-[#0064FF]"
+                      >
+                        <img
+                          src="/toss-mini-app.png"
+                          alt="Toss"
+                          className="w-4 h-4 object-contain"
+                        />
+                        Toss 미니앱
+                      </a>
+                    )}
                   </div>
                 </div>
               </div>
