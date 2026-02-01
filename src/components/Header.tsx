@@ -24,6 +24,9 @@ export default function Header() {
       setIsScrolled(window.scrollY > 50);
     };
 
+    // 초기 로드 시 스크롤 위치 체크
+    handleScroll();
+
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
