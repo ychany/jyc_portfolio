@@ -3,9 +3,25 @@
 import { motion } from "framer-motion";
 import FadeIn from "@/components/ui/FadeIn";
 import SectionTitle from "@/components/ui/SectionTitle";
-import { certificateData, awardData } from "@/data/portfolio";
+import { certificateData, awardData, projectsData } from "@/data/portfolio";
 
 export default function Achievements() {
+  const scrollToProject = (projectId: number) => {
+    const project = projectsData.find((p) => p.id === projectId);
+    if (project) {
+      const projectsSection = document.getElementById("projects");
+      if (projectsSection) {
+        const headerOffset = 70;
+        const elementPosition = projectsSection.getBoundingClientRect().top;
+        const offsetPosition = elementPosition + window.scrollY - headerOffset;
+
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: "smooth",
+        });
+      }
+    }
+  };
   const hasContent = certificateData.length > 0 || awardData.length > 0;
 
   if (!hasContent) return null;
@@ -79,7 +95,20 @@ export default function Achievements() {
                       transition={{ delay: 0.1 * index }}
                     >
                       <div className="flex flex-col">
-                        <span className="font-medium text-gray-900 dark:text-white">{item.title}</span>
+                        <div className="flex items-center gap-2">
+                          <span className="font-medium text-gray-900 dark:text-white">{item.title}</span>
+                          {item.projectId && (
+                            <button
+                              onClick={() => scrollToProject(item.projectId!)}
+                              className="text-xs text-teal-600 hover:text-teal-700 font-medium flex items-center gap-1 cursor-pointer"
+                            >
+                              수상작
+                              <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                              </svg>
+                            </button>
+                          )}
+                        </div>
                         <span className="text-xs text-gray-500 dark:text-gray-400">{item.date}</span>
                       </div>
                       <span className="px-3 py-1 bg-rose-100 text-rose-600 text-sm font-medium rounded-full">

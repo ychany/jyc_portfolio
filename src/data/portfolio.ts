@@ -259,11 +259,13 @@ export const awardData: {
   title: string;
   prize: string;
   date: string;
+  projectId?: number;
 }[] = [
   {
     title: "코레일 내일로 해커톤",
     prize: "장려상",
     date: "2025.12",
+    projectId: 1,
   },
   {
     title: "충주 청년 창업 아이디어 캠프",
