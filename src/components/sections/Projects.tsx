@@ -6,6 +6,7 @@ import FadeIn from "@/components/ui/FadeIn";
 import SectionTitle from "@/components/ui/SectionTitle";
 import ProjectModal from "@/components/ui/ProjectModal";
 import { projectsData } from "@/data/portfolio";
+import { useDujjoncooStats } from "@/hooks/useDujjoncooStats";
 
 const techTagColors: Record<string, string> = {
   React: "tag-react",
@@ -36,6 +37,7 @@ export default function Projects() {
     (typeof projectsData)[0] | null
   >(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const { totalCookies } = useDujjoncooStats();
 
   const openModal = (project: (typeof projectsData)[0]) => {
     setSelectedProject(project);
@@ -229,6 +231,19 @@ export default function Projects() {
                   <p className="text-gray-600 dark:text-gray-300 leading-relaxed mb-6">
                     {project.description}
                   </p>
+
+                  {/* 두쫀쿠 실시간 통계 */}
+                  {project.title === "두바이 왕자" && totalCookies !== null && (
+                    <div className="flex items-center gap-2 mb-6 px-4 py-3 bg-amber-50 dark:bg-amber-900/20 rounded-xl">
+                      <span className="text-2xl">🍪</span>
+                      <div>
+                        <p className="text-xs text-amber-600 dark:text-amber-400 font-medium">누적 섭취량</p>
+                        <p className="text-lg font-bold text-amber-700 dark:text-amber-300">
+                          {totalCookies.toLocaleString()}개
+                        </p>
+                      </div>
+                    </div>
+                  )}
 
                   {/* Features - 3개만 표시 */}
                   {project.features.length > 0 && (
