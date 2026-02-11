@@ -131,7 +131,7 @@ export const projectsData: {
     subtitle: "축구 직관 기록 다이어리 앱",
     description:
       "축구 경기 직관 기록을 작성하고 관리할 수 있는 모바일 앱입니다. 경기 사진, 좌석 정보, 평점, MVP 선정 등 직관의 특별한 순간들을 기록하고, 실시간 경기 스코어와 리그 순위를 확인할 수 있습니다.",
-    image: "",
+    image: "/images/projects/foothub_main.jpeg",
     images: [],
     techStack: ["Flutter", "Dart", "Firebase", "Riverpod"],
     github: "https://github.com/ychany/FootHub",
