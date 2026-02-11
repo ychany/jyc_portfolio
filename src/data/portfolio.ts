@@ -219,7 +219,7 @@ export const projectsData: {
     description:
       "도시 활력 불균형 문제를 해결하기 위한 AI 기반 동적 리워드 관광 웹앱입니다. 저활력 지역(원도심)에서의 활동에 더 높은 리워드를 제공하여 관광객과 시민의 이동을 유도합니다.",
     award: "충주 청년창업 아이디어 캠프 최우수상",
-    image: "",
+    image: "/images/projects/chungju_main.png",
     images: [],
     techStack: ["HTML5", "CSS3", "JavaScript"],
     github: "https://github.com/ychany/chungju_CityBalance",
