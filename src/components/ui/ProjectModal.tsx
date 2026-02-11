@@ -1,7 +1,7 @@
 "use client";
 
 import { motion, AnimatePresence } from "framer-motion";
-import { useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 
 interface Project {
   id: number;
@@ -44,6 +44,116 @@ const techTagColors: Record<string, string> = {
   "Naver Map API": "bg-[#03C75A]/20 text-[#03C75A]",
   Vite: "bg-[#646CFF]/20 text-[#646CFF]",
 };
+
+function ImageCarousel({ images, title }: { images: string[]; title: string }) {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [direction, setDirection] = useState(0);
+  const [touchStart, setTouchStart] = useState<number | null>(null);
+
+  const paginate = useCallback(
+    (newDirection: number) => {
+      setDirection(newDirection);
+      setCurrentIndex((prev) => {
+        if (newDirection === 1) return prev === images.length - 1 ? 0 : prev + 1;
+        return prev === 0 ? images.length - 1 : prev - 1;
+      });
+    },
+    [images.length]
+  );
+
+  const handleTouchStart = (e: React.TouchEvent) => {
+    setTouchStart(e.touches[0].clientX);
+  };
+
+  const handleTouchEnd = (e: React.TouchEvent) => {
+    if (touchStart === null) return;
+    const diff = touchStart - e.changedTouches[0].clientX;
+    if (Math.abs(diff) > 50) {
+      paginate(diff > 0 ? 1 : -1);
+    }
+    setTouchStart(null);
+  };
+
+  const variants = {
+    enter: (dir: number) => ({ x: dir > 0 ? 300 : -300, opacity: 0 }),
+    center: { x: 0, opacity: 1 },
+    exit: (dir: number) => ({ x: dir > 0 ? -300 : 300, opacity: 0 }),
+  };
+
+  return (
+    <div className="mb-6">
+      <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">
+        스크린샷
+      </h3>
+      <div className="relative">
+        {/* Carousel */}
+        <div
+          className="relative aspect-video bg-gray-100 dark:bg-gray-800 rounded-xl overflow-hidden"
+          onTouchStart={handleTouchStart}
+          onTouchEnd={handleTouchEnd}
+        >
+          <AnimatePresence initial={false} custom={direction} mode="popLayout">
+            <motion.img
+              key={currentIndex}
+              src={images[currentIndex]}
+              alt={`${title} screenshot ${currentIndex + 1}`}
+              className="absolute inset-0 w-full h-full object-contain bg-gray-100 dark:bg-gray-800"
+              custom={direction}
+              variants={variants}
+              initial="enter"
+              animate="center"
+              exit="exit"
+              transition={{ duration: 0.3, ease: "easeInOut" }}
+              draggable={false}
+            />
+          </AnimatePresence>
+        </div>
+
+        {/* Navigation Arrows */}
+        {images.length > 1 && (
+          <>
+            <button
+              onClick={() => paginate(-1)}
+              className="absolute left-2 top-1/2 -translate-y-1/2 w-9 h-9 bg-black/40 hover:bg-black/60 rounded-full flex items-center justify-center text-white transition-colors cursor-pointer"
+            >
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+              </svg>
+            </button>
+            <button
+              onClick={() => paginate(1)}
+              className="absolute right-2 top-1/2 -translate-y-1/2 w-9 h-9 bg-black/40 hover:bg-black/60 rounded-full flex items-center justify-center text-white transition-colors cursor-pointer"
+            >
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+              </svg>
+            </button>
+          </>
+        )}
+
+        {/* Dots Indicator */}
+        {images.length > 1 && (
+          <div className="flex justify-center gap-1.5 mt-3">
+            {images.map((_, idx) => (
+              <button
+                key={idx}
+                onClick={() => {
+                  setDirection(idx > currentIndex ? 1 : -1);
+                  setCurrentIndex(idx);
+                }}
+                className={`w-2 h-2 rounded-full transition-all cursor-pointer ${
+                  idx === currentIndex
+                    ? "bg-teal-500 w-6"
+                    : "bg-gray-300 dark:bg-gray-600 hover:bg-gray-400"
+                }`}
+              />
+            ))}
+          </div>
+        )}
+      </div>
+    </div>
+  );
+}
 
 export default function ProjectModal({
   project,
@@ -208,27 +318,9 @@ export default function ProjectModal({
                   {project.description}
                 </p>
 
-                {/* Screenshots Gallery */}
+                {/* Screenshots Carousel */}
                 {project.images && project.images.length > 0 && (
-                  <div className="mb-6">
-                    <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">
-                      Screenshots
-                    </h3>
-                    <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
-                      {project.images.map((img, idx) => (
-                        <div
-                          key={idx}
-                          className="aspect-video bg-gray-100 dark:bg-gray-800 rounded-lg overflow-hidden"
-                        >
-                          <img
-                            src={img}
-                            alt={`${project.title} screenshot ${idx + 1}`}
-                            className="w-full h-full object-cover hover:scale-105 transition-transform"
-                          />
-                        </div>
-                      ))}
-                    </div>
-                  </div>
+                  <ImageCarousel images={project.images} title={project.title} />
                 )}
 
                 {/* Features */}
