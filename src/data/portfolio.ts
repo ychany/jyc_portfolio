@@ -179,7 +179,7 @@ export const projectsData: {
     techStack: ["React", "TypeScript", "Vite", "React Router", "Framer Motion"],
     github: "https://github.com/ychany/kickoff",
     demo: "https://kickoff-live.vercel.app",
-    tossApp: "https://apps-in-toss.toss.im/workspace/15493/mini-app/19236/home",
+    tossApp: "https://minion.toss.im/J0lHQcjk",
     period: "2026",
     role: "1인 개발",
     features: [
