@@ -214,6 +214,28 @@ export const projectsData: {
   },
   {
     id: 6,
+    title: "충주 원도심 문제해결 균형발전 시스템",
+    subtitle: "AI 기반 동적 리워드 관광 웹앱",
+    description:
+      "도시 활력 불균형 문제를 해결하기 위한 AI 기반 동적 리워드 관광 웹앱입니다. 저활력 지역(원도심)에서의 활동에 더 높은 리워드를 제공하여 관광객과 시민의 이동을 유도합니다.",
+    award: "충주 청년창업 아이디어 캠프 최우수상",
+    image: "",
+    images: [],
+    techStack: ["HTML5", "CSS3", "JavaScript"],
+    github: "https://github.com/ychany/chungju_CityBalance",
+    demo: "https://chungju-city-balance.vercel.app",
+    period: "2026.01",
+    role: "1인 개발",
+    features: [
+      "시간대·요일 가중치 적용 동적 리워드 시스템",
+      "Leaflet 기반 12개 행정동 실시간 활력 지도",
+      "체크인 시스템 (30분 쿨다운)",
+      "5가지 미션 및 6가지 배지 시스템",
+      "10단계 레벨 시스템",
+    ],
+  },
+  {
+    id: 7,
     title: "Portfolio",
     subtitle: "개인 포트폴리오 웹사이트",
     description:
@@ -315,6 +337,7 @@ export const awardData: {
     title: "충주 청년 창업 아이디어 캠프",
     prize: "최우수상",
     date: "2026.01",
+    projectId: 6,
   },
 ];
 

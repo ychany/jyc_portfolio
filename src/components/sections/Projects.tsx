@@ -57,6 +57,7 @@ export default function Projects() {
           {projectsData.map((project, index) => (
             <FadeIn key={project.id} delay={0.1}>
               <div
+                id={`project-${project.id}`}
                 className={`grid md:grid-cols-2 gap-8 md:gap-12 items-center ${
                   index % 2 === 1 ? "md:flex-row-reverse" : ""
                 }`}

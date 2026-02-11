@@ -7,19 +7,16 @@ import { certificateData, awardData, projectsData } from "@/data/portfolio";
 
 export default function Achievements() {
   const scrollToProject = (projectId: number) => {
-    const project = projectsData.find((p) => p.id === projectId);
-    if (project) {
-      const projectsSection = document.getElementById("projects");
-      if (projectsSection) {
-        const headerOffset = 70;
-        const elementPosition = projectsSection.getBoundingClientRect().top;
-        const offsetPosition = elementPosition + window.scrollY - headerOffset;
+    const projectElement = document.getElementById(`project-${projectId}`);
+    if (projectElement) {
+      const headerOffset = 105;
+      const elementPosition = projectElement.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.scrollY - headerOffset;
 
-        window.scrollTo({
-          top: offsetPosition,
-          behavior: "smooth",
-        });
-      }
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: "smooth",
+      });
     }
   };
   const hasContent = certificateData.length > 0 || awardData.length > 0;
