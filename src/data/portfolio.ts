@@ -152,7 +152,7 @@ export const projectsData: {
     subtitle: "두바이 쫀득 쿠키 가상 먹방 웹앱",
     description:
       "6,000원짜리 두바이 쫀득쿠키를 무료로 먹어보는 가상 먹방 체험 웹앱입니다. 터치/클릭 인터랙션으로 쿠키를 먹고, 실시간 동시 접속자 수와 누적 섭취량을 확인할 수 있습니다.",
-    image: "",
+    image: "/images/projects/dujjoncoo_main.png",
     images: [],
     techStack: ["React", "TypeScript", "Vite", "Tailwind CSS", "Firebase"],
     github: "https://github.com/ychany/dujjoncoo",

@@ -237,7 +237,7 @@ export default function Projects() {
                     <div className="flex items-center gap-2 mb-6 px-4 py-3 bg-amber-50 dark:bg-amber-900/20 rounded-xl">
                       <span className="text-2xl">🍪</span>
                       <div>
-                        <p className="text-xs text-amber-600 dark:text-amber-400 font-medium">누적 섭취량</p>
+                        <p className="text-xs text-amber-600 dark:text-amber-400 font-medium">누적 섭취량 <span className="text-amber-400 dark:text-amber-500">(실시간)</span></p>
                         <p className="text-lg font-bold text-amber-700 dark:text-amber-300">
                           {totalCookies.toLocaleString()}개
                         </p>
