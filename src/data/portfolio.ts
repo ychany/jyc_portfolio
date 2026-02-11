@@ -192,6 +192,28 @@ export const projectsData: {
   },
   {
     id: 5,
+    title: "Smoke Trace",
+    subtitle: "담배 한 개비가 남기는 흔적 시각화 웹앱",
+    description:
+      "담배 한 개비가 남기는 흔적을 시각화하는 교육용 웹앱입니다. 꾹 누르기/더블클릭으로 담배를 피우는 시뮬레이션과 실시간 연기 파티클 효과, 개인/전체 통계를 제공합니다.",
+    image: "",
+    images: [],
+    techStack: ["React", "TypeScript", "Vite", "Tailwind CSS", "Firebase"],
+    github: "https://github.com/ychany/smoke_trace",
+    demo: "https://smoketrace.vercel.app",
+    tossApp: "https://minion.toss.im/VKRZG1yg",
+    period: "2026",
+    role: "1인 개발",
+    features: [
+      "담배 피우기 시뮬레이션 (꾹 누르기/더블클릭 자동 모드)",
+      "실시간 연기 파티클 효과",
+      "개인 통계 (피운 개비, 태운 돈, 줄어든 수명)",
+      "실시간 전체 통계 (동시 접속자, 오늘/누적 개비 수)",
+      "토스 앱인토스 연동 및 공유 기능",
+    ],
+  },
+  {
+    id: 6,
     title: "Portfolio",
     subtitle: "개인 포트폴리오 웹사이트",
     description:
