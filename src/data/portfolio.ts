@@ -196,7 +196,7 @@ export const projectsData: {
     subtitle: "담배 한 개비가 남기는 흔적 시각화 웹앱",
     description:
       "담배 한 개비가 남기는 흔적을 시각화하는 교육용 웹앱입니다. 꾹 누르기/더블클릭으로 담배를 피우는 시뮬레이션과 실시간 연기 파티클 효과, 개인/전체 통계를 제공합니다.",
-    image: "",
+    image: "/images/projects/smoketrace_main.png",
     images: [],
     techStack: ["React", "TypeScript", "Vite", "Tailwind CSS", "Firebase"],
     github: "https://github.com/ychany/smoke_trace",
