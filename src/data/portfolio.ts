@@ -109,7 +109,7 @@ export const projectsData: {
     description:
       "사랑하는 사람과 함께하는 특별한 기차 여행을 위한 앱으로, AI 기반 맞춤형 여행 코스 추천과 레일필름(포토카드) 생성 기능을 제공합니다.",
     award: "코레일 내일로 해커톤 장려상",
-    image: "",
+    image: "/images/projects/korail_main.png",
     images: [],
     techStack: ["Flutter", "Dart", "Provider", "Naver Map API"],
     github: "https://github.com/dusagong/korail_donghang_train_app",
