@@ -174,7 +174,7 @@ export const projectsData: {
     subtitle: "실시간 축구 경기 정보 토스 미니앱",
     description:
       "실시간 축구 경기 스코어, 리그 순위, 선수 통계 등을 제공하는 토스 앱인토스 미니앱입니다. 유럽 5대 리그, UEFA 대회, K리그를 지원하며, 날짜별 경기 일정 조회와 상세 통계를 확인할 수 있습니다.",
-    image: "",
+    image: "/images/projects/kickoff_main.png",
     images: [],
     techStack: ["React", "TypeScript", "Vite", "React Router", "Framer Motion"],
     github: "https://github.com/ychany/kickoff",
