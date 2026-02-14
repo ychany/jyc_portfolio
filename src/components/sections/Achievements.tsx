@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import FadeIn from "@/components/ui/FadeIn";
 import SectionTitle from "@/components/ui/SectionTitle";
-import { certificateData, awardData, activityData, projectsData } from "@/data/portfolio";
+import { certificateData, awardData, /* activityData, */ projectsData } from "@/data/portfolio";
 
 export default function Achievements() {
   const scrollToProject = (projectId: number) => {
@@ -119,7 +119,7 @@ export default function Achievements() {
           )}
         </div>
 
-        {/* 경험 */}
+        {/* 경험 - 주석처리
         {activityData.length > 0 && (
           <FadeIn delay={0.2}>
             <div className="bg-white dark:bg-gray-900 rounded-2xl p-6 md:p-8 shadow-sm mt-8">
@@ -153,6 +153,7 @@ export default function Achievements() {
             </div>
           </FadeIn>
         )}
+        */}
       </div>
     </section>
   );
