@@ -114,8 +114,8 @@ export const projectsData: {
     techStack: ["Flutter", "Dart", "Provider", "Naver Map API"],
     github: "https://github.com/dusagong/korail_donghang_train_app",
     demo: "",
-    period: "2025.12",
-    role: "풀스택 개발",
+    period: "2025.11 ~ 12",
+    role: "백엔드 개발",
     team: "2인 팀 프로젝트",
     features: [
       "AI 기반 맞춤형 여행 코스 추천 (만남승강장)",
@@ -136,7 +136,7 @@ export const projectsData: {
     techStack: ["Flutter", "Dart", "Firebase", "Riverpod"],
     github: "https://github.com/ychany/FootHub",
     demo: "https://apps.apple.com/kr/app/foothub/id6757123385",
-    period: "2025",
+    period: "2025.11 ~ 2026.01",
     role: "1인 개발 (기획, 디자인, 개발)",
     features: [
       "경기 직관 기록 작성 (사진, 좌석, 평점, MVP 등)",
@@ -158,8 +158,8 @@ export const projectsData: {
     github: "https://github.com/ychany/dujjoncoo",
     demo: "https://dujjoncoo.vercel.app",
     tossApp: "https://minion.toss.im/JesOF8A2",
-    period: "2026",
-    role: "1인 개발",
+    period: "2026.01",
+    role: "1인 개발 (기획, 디자인, 개발)",
     features: [
       "터치/클릭/스페이스바 인터랙션 쿠키 먹기",
       "Firebase Presence 기반 실시간 동시 접속자 표시",
@@ -180,8 +180,8 @@ export const projectsData: {
     github: "https://github.com/ychany/kickoff",
     demo: "https://kickoff-live.vercel.app",
     tossApp: "https://minion.toss.im/J0lHQcjk",
-    period: "2026",
-    role: "1인 개발",
+    period: "2026.02",
+    role: "1인 개발 (기획, 디자인, 개발)",
     features: [
       "실시간 라이브 경기 현황 및 스코어",
       "리그별 순위표, 득점/도움 순위 통계",
@@ -202,8 +202,8 @@ export const projectsData: {
     github: "https://github.com/ychany/smoke_trace",
     demo: "https://smoketrace.vercel.app",
     tossApp: "https://minion.toss.im/VKRZG1yg",
-    period: "2026",
-    role: "1인 개발",
+    period: "2026.02",
+    role: "1인 개발 (기획, 디자인, 개발)",
     features: [
       "담배 피우기 시뮬레이션 (꾹 누르기/더블클릭 자동 모드)",
       "실시간 연기 파티클 효과",
@@ -225,7 +225,7 @@ export const projectsData: {
     github: "https://github.com/ychany/chungju_CityBalance",
     demo: "https://chungju-city-balance.vercel.app",
     period: "2026.01",
-    role: "1인 개발",
+    role: "1인 개발 (기획, 디자인, 개발)",
     features: [
       "시간대·요일 가중치 적용 동적 리워드 시스템",
       "Leaflet 기반 12개 행정동 실시간 활력 지도",
@@ -246,7 +246,7 @@ export const projectsData: {
     github: "https://github.com/ychany/jyc_portfolio",
     demo: "https://jyc-portfolio.vercel.app",
     period: "2026.01",
-    role: "1인 개발",
+    role: "1인 개발 (기획, 디자인, 개발)",
     features: [
       "반응형 디자인 (모바일, 태블릿, 데스크톱)",
       "Framer Motion 스크롤 애니메이션",
