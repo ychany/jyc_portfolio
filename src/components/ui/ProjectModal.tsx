@@ -423,8 +423,8 @@ export default function ProjectModal({
                           key={i}
                           className="flex items-start gap-2 text-gray-600 dark:text-gray-300 text-sm"
                         >
-                          <span className="text-amber-500 mt-0.5 flex-shrink-0">
-                            📝
+                          <span className="text-teal-500 mt-0.5 flex-shrink-0">
+                            •
                           </span>
                           {note}
                         </li>
