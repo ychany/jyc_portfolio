@@ -33,6 +33,10 @@
 - **실시간 Firebase 연동** - 프로젝트 실시간 통계 표시
 - **수상작 연결** - 수상 내역에서 해당 프로젝트로 스크롤 이동
 - **Toss 미니앱 연동** - 토스 앱인토스 바로가기 버튼
+- **PDF 다운로드** - 포트폴리오를 PDF로 내보내기
+- **공유 기능** - Web Share API / 클립보드 복사
+- **OG 이미지** - 카카오톡, 슬랙 등 링크 미리보기 지원
+- **이미지 최적화** - 스크린샷 WebP 변환 (90% 용량 감소)
 - **데이터 기반 관리** - `portfolio.ts` 파일 수정으로 콘텐츠 관리
 - **동적 헤더** - 스크롤 위치에 따른 헤더 스타일 변경
 - **맨 위로 가기** - 커스텀 이징 스크롤 애니메이션
@@ -111,7 +115,8 @@ src/
 ├── hooks/
 │   └── useDujjoncooStats.ts    # 실시간 Firebase 통계 훅
 └── lib/
-    └── dujjoncoo-firebase.ts   # Firebase 설정
+    ├── dujjoncoo-firebase.ts   # Firebase 설정
+    └── generatePdf.ts          # PDF 생성
 public/
 └── images/
     └── projects/
@@ -124,6 +129,7 @@ public/
         │   ├── chungju/
         │   └── portfolio/
         └── *_main.png          # 프로젝트 대표 이미지
+└── og-image.png                # OG 미리보기 이미지
 ```
 
 ## Screenshots 관리
