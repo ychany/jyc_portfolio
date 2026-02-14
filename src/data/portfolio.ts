@@ -180,6 +180,11 @@ export const projectsData: {
       "부스러기 파티클 애니메이션",
       "토스 미니앱 연동",
     ],
+    notes: [
+      "첫 토스 앱인토스 심사 및 배포 경험",
+      "Firebase Realtime Database를 활용한 실시간 동시 접속자·통계 시스템 구현",
+      "파티클 애니메이션 등 인터랙티브 UI/UX 설계 경험",
+    ],
   },
   {
     id: 4,
