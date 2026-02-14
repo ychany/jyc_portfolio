@@ -15,12 +15,12 @@ export const profileData = {
 
 // aboutData의 details를 동적으로 생성하는 함수
 const getAboutDetails = () => [
-  { icon: "user", label: "이름", value: "조영찬" },
-  { icon: "calendar", label: "생년월일", value: "04.04.03" },
-  { icon: "location", label: "위치", value: "충청북도 충주시\n서울특별시 광진구" },
+  { icon: "user", label: "이름", value: "조영찬 (04.04.03)" },
+  { icon: "briefcase", label: "소속", value: "(주) 서울소프트 재직 중" },
+  { icon: "education", label: "학력", value: getEducationString() },
   { icon: "phone", label: "연락처", value: "010-9855-5344" },
   { icon: "email", label: "이메일", value: "tigerbone@naver.com\ndudcks5344@konkuk.ac.kr" },
-  { icon: "education", label: "학력", value: getEducationString() },
+  { icon: "location", label: "위치", value: "충청북도 충주시\n서울특별시 광진구" },
 ];
 
 export const aboutData = {
