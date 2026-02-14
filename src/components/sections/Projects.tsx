@@ -1,10 +1,10 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import FadeIn from "@/components/ui/FadeIn";
 import SectionTitle from "@/components/ui/SectionTitle";
-import ProjectModal from "@/components/ui/ProjectModal";
+import ProjectModal, { prefetchScreenshots } from "@/components/ui/ProjectModal";
 import { projectsData } from "@/data/portfolio";
 import { useDujjoncooStats } from "@/hooks/useDujjoncooStats";
 
@@ -38,6 +38,28 @@ export default function Projects() {
   >(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const { totalCookies } = useDujjoncooStats();
+  const sectionRef = useRef<HTMLElement>(null);
+  const prefetched = useRef(false);
+
+  // Projects 섹션이 뷰포트에 보이면 스크린샷 목록을 미리 가져오기
+  useEffect(() => {
+    const el = sectionRef.current;
+    if (!el) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting && !prefetched.current) {
+          prefetched.current = true;
+          const dirs = projectsData
+            .map((p) => p.screenshotDir)
+            .filter(Boolean) as string[];
+          prefetchScreenshots(dirs);
+        }
+      },
+      { rootMargin: "200px" }
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
 
   const openModal = (project: (typeof projectsData)[0]) => {
     setSelectedProject(project);
@@ -50,7 +72,7 @@ export default function Projects() {
   };
 
   return (
-    <section id="projects" className="py-12 md:py-16 bg-white dark:bg-gray-900">
+    <section ref={sectionRef} id="projects" className="py-12 md:py-16 bg-white dark:bg-gray-900">
       <div className="max-w-6xl mx-auto px-6">
         <SectionTitle>Projects</SectionTitle>
 

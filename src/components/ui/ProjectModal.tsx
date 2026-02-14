@@ -51,7 +51,19 @@ const techTagColors: Record<string, string> = {
   Leaflet: "bg-[#199900]/20 text-[#199900]",
 };
 
-const screenshotCache = new Map<string, string[]>();
+export const screenshotCache = new Map<string, string[]>();
+
+export function prefetchScreenshots(dirs: string[]) {
+  dirs.forEach((dir) => {
+    if (screenshotCache.has(dir)) return;
+    fetch(`/api/screenshots?dir=${encodeURIComponent(dir)}`)
+      .then((res) => res.json())
+      .then((data) => {
+        screenshotCache.set(dir, data.images || []);
+      })
+      .catch(() => {});
+  });
+}
 
 function ScreenshotViewer({ images, title, onClose }: { images: string[]; title: string; onClose: () => void }) {
   const [currentIndex, setCurrentIndex] = useState(0);
