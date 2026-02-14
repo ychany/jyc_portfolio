@@ -380,6 +380,22 @@ export const awardData: {
   },
 ];
 
+// 활동 경험
+export const activityData = [
+  {
+    organization: "건국대학교 정보운영팀",
+    role: "교내 근로",
+    period: "2024.03 ~ 2025.01",
+    description: "행정, 지정업무, 학교 홈페이지 모니터링 및 피드백, 신규사업 참여",
+  },
+  {
+    organization: "중앙대학교 산학협력단",
+    role: "인공지능 연구보조원",
+    period: "2023.09",
+    description: "딥러닝 학습에 필요한 데이터 전처리",
+  },
+];
+
 export const contactData = {
   email: "tigerbone@naver.com",
   message: "프로젝트 협업, 채용 관련 문의 등 편하게 연락주세요!",

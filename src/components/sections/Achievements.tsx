@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import FadeIn from "@/components/ui/FadeIn";
 import SectionTitle from "@/components/ui/SectionTitle";
-import { certificateData, awardData, projectsData } from "@/data/portfolio";
+import { certificateData, awardData, activityData, projectsData } from "@/data/portfolio";
 
 export default function Achievements() {
   const scrollToProject = (projectId: number) => {
@@ -118,6 +118,41 @@ export default function Achievements() {
             </FadeIn>
           )}
         </div>
+
+        {/* 경험 */}
+        {activityData.length > 0 && (
+          <FadeIn delay={0.2}>
+            <div className="bg-white dark:bg-gray-900 rounded-2xl p-6 md:p-8 shadow-sm mt-8">
+              <div className="flex items-center gap-3 mb-6">
+                <div className="w-10 h-10 rounded-full bg-indigo-500 text-white flex items-center justify-center">
+                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                  </svg>
+                </div>
+                <h3 className="text-xl font-bold text-gray-900 dark:text-white">경험</h3>
+              </div>
+              <div className="space-y-3">
+                {activityData.map((item, index) => (
+                  <motion.div
+                    key={index}
+                    className="flex items-start justify-between py-3 border-b border-gray-100 dark:border-gray-700 last:border-0 gap-4"
+                    initial={{ opacity: 0, y: 10 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: 0.1 * index }}
+                  >
+                    <div className="flex flex-col">
+                      <span className="font-medium text-gray-900 dark:text-white">{item.organization}</span>
+                      <span className="text-sm text-indigo-600 dark:text-indigo-400 font-medium">{item.role}</span>
+                      <span className="text-xs text-gray-500 dark:text-gray-400 mt-1">{item.description}</span>
+                    </div>
+                    <span className="text-xs text-gray-500 dark:text-gray-400 whitespace-nowrap shrink-0">{item.period}</span>
+                  </motion.div>
+                ))}
+              </div>
+            </div>
+          </FadeIn>
+        )}
       </div>
     </section>
   );
