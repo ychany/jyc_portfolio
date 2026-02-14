@@ -32,6 +32,23 @@ export default function Header() {
     }
   }, [isGeneratingPdf]);
 
+  const handleShare = useCallback(async () => {
+    try {
+      if (navigator.share) {
+        await navigator.share({
+          title: "조영찬 | Developer",
+          text: "개발자 조영찬의 포트폴리오입니다.",
+          url: window.location.href,
+        });
+      } else {
+        await navigator.clipboard.writeText(window.location.href);
+        alert("링크가 복사되었습니다!");
+      }
+    } catch {
+      // 사용자가 공유 시트를 닫은 경우 무시
+    }
+  }, []);
+
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
@@ -123,6 +140,21 @@ export default function Header() {
                     <path strokeLinecap="round" strokeLinejoin="round" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                   </svg>
                 )}
+              </motion.button>
+              <motion.button
+                onClick={handleShare}
+                className={`p-2 rounded-lg transition-colors ${
+                  isScrolled
+                    ? "text-gray-600 dark:text-gray-300 hover:text-teal-600 hover:bg-gray-100 dark:hover:bg-gray-800"
+                    : "text-gray-600 dark:text-gray-300 hover:text-teal-600 hover:bg-white/20"
+                }`}
+                whileHover={{ y: -2 }}
+                whileTap={{ scale: 0.95 }}
+                title="공유"
+              >
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z" />
+                </svg>
               </motion.button>
               <ThemeToggle />
             </nav>
@@ -217,6 +249,18 @@ export default function Header() {
                       PDF 다운로드
                     </>
                   )}
+                </motion.button>
+                <motion.button
+                  className="text-2xl font-semibold text-teal-500 py-3 border-b border-gray-100 dark:border-gray-800 text-left flex items-center gap-3"
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: 0.1 * (navItems.length + 1) }}
+                  onClick={() => { handleShare(); setIsMobileMenuOpen(false); }}
+                >
+                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z" />
+                  </svg>
+                  공유
                 </motion.button>
               </nav>
             </div>
