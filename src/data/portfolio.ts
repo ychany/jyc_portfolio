@@ -153,6 +153,11 @@ export const projectsData: {
       "한국어/영어 다국어 지원",
       "경기별 커뮤니티 댓글 기능",
     ],
+    notes: [
+      "첫 App Store 배포 경험 — 심사 과정 및 배포 파이프라인 학습",
+      "Riverpod 상태관리 패턴 적용 및 Flutter 아키텍처 설계 경험",
+      "외부 축구 API 연동 및 실시간 데이터 처리 구현",
+    ],
   },
   {
     id: 3,
