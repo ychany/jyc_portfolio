@@ -27,7 +27,7 @@ export async function GET(request: NextRequest) {
 
     const files = fs
       .readdirSync(screenshotDir)
-      .filter((file) => /\.(png|jpg|jpeg|gif|webp)$/i.test(file))
+      .filter((file) => /\.(webp|png|jpg|jpeg|gif)$/i.test(file))
       .sort();
 
     const images = files.map(
