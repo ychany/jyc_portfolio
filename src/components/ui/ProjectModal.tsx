@@ -44,6 +44,11 @@ const techTagColors: Record<string, string> = {
   Provider: "bg-[#02569B]/20 text-[#54C5F8]",
   "Naver Map API": "bg-[#03C75A]/20 text-[#03C75A]",
   Vite: "bg-[#646CFF]/20 text-[#646CFF]",
+  GoRouter: "bg-[#02569B]/20 text-[#54C5F8]",
+  "TanStack Query": "bg-[#FF4154]/20 text-[#FF4154]",
+  Recharts: "bg-[#8884D8]/20 text-[#8884D8]",
+  "React Router": "bg-[#CA4245]/20 text-[#CA4245]",
+  Leaflet: "bg-[#199900]/20 text-[#199900]",
 };
 
 function ScreenshotViewer({ images, title, onClose }: { images: string[]; title: string; onClose: () => void }) {
