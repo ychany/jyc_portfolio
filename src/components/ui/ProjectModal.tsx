@@ -51,6 +51,8 @@ const techTagColors: Record<string, string> = {
   Leaflet: "bg-[#199900]/20 text-[#199900]",
 };
 
+const screenshotCache = new Map<string, string[]>();
+
 function ScreenshotViewer({ images, title, onClose }: { images: string[]; title: string; onClose: () => void }) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [direction, setDirection] = useState(0);
@@ -197,13 +199,23 @@ export default function ProjectModal({
   const [showScreenshots, setShowScreenshots] = useState(false);
   const [screenshots, setScreenshots] = useState<string[]>([]);
 
-  // 모달 열릴 때 스크린샷 폴더에서 이미지 불러오기
+  // 모달 열릴 때 스크린샷 폴더에서 이미지 불러오기 (캐시 적용)
   useEffect(() => {
     if (isOpen && project?.screenshotDir) {
-      fetch(`/api/screenshots?dir=${encodeURIComponent(project.screenshotDir)}`)
-        .then((res) => res.json())
-        .then((data) => setScreenshots(data.images || []))
-        .catch(() => setScreenshots([]));
+      const dir = project.screenshotDir;
+      const cached = screenshotCache.get(dir);
+      if (cached) {
+        setScreenshots(cached);
+      } else {
+        fetch(`/api/screenshots?dir=${encodeURIComponent(dir)}`)
+          .then((res) => res.json())
+          .then((data) => {
+            const images = data.images || [];
+            screenshotCache.set(dir, images);
+            setScreenshots(images);
+          })
+          .catch(() => setScreenshots([]));
+      }
     }
     if (!isOpen) {
       setShowScreenshots(false);
