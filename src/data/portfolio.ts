@@ -101,6 +101,7 @@ export const projectsData: {
   award?: string;
   role?: string;
   team?: string;
+  notes?: string[];
 }[] = [
   {
     id: 1,

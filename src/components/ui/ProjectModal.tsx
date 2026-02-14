@@ -19,6 +19,7 @@ interface Project {
   award?: string;
   role?: string;
   team?: string;
+  notes?: string[];
 }
 
 interface ProjectModalProps {
@@ -404,6 +405,28 @@ export default function ProjectModal({
                             ✓
                           </span>
                           {feature}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+
+                {/* Notes */}
+                {project.notes && project.notes.length > 0 && (
+                  <div className="mb-6">
+                    <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">
+                      배운 점 / 메모
+                    </h3>
+                    <ul className="space-y-2">
+                      {project.notes.map((note, i) => (
+                        <li
+                          key={i}
+                          className="flex items-start gap-2 text-gray-600 dark:text-gray-300 text-sm"
+                        >
+                          <span className="text-amber-500 mt-0.5 flex-shrink-0">
+                            📝
+                          </span>
+                          {note}
                         </li>
                       ))}
                     </ul>
