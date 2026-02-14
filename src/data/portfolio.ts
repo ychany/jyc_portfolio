@@ -91,7 +91,7 @@ export const projectsData: {
   subtitle: string;
   description: string;
   image: string;
-  images?: string[];
+  screenshotDir?: string;
   techStack: string[];
   github: string;
   demo: string;
@@ -110,7 +110,7 @@ export const projectsData: {
       "사랑하는 사람과 함께하는 특별한 기차 여행을 위한 앱으로, AI 기반 맞춤형 여행 코스 추천과 레일필름(포토카드) 생성 기능을 제공합니다.",
     award: "코레일 내일로 해커톤 장려상",
     image: "/images/projects/korail_main.png",
-    images: [],
+    screenshotDir: "korail",
     techStack: ["Flutter", "Dart", "Provider", "Naver Map API"],
     github: "https://github.com/dusagong/korail_donghang_train_app",
     demo: "",
@@ -132,7 +132,7 @@ export const projectsData: {
     description:
       "축구 경기 직관 기록을 작성하고 관리할 수 있는 모바일 앱입니다. 경기 사진, 좌석 정보, 평점, MVP 선정 등 직관의 특별한 순간들을 기록하고, 실시간 경기 스코어와 리그 순위를 확인할 수 있습니다.",
     image: "/images/projects/foothub_main.jpeg",
-    images: [],
+    screenshotDir: "foothub",
     techStack: ["Flutter", "Dart", "Firebase", "Riverpod"],
     github: "https://github.com/ychany/FootHub",
     demo: "https://apps.apple.com/kr/app/foothub/id6757123385",
@@ -153,7 +153,7 @@ export const projectsData: {
     description:
       "6,000원짜리 두바이 쫀득쿠키를 무료로 먹어보는 가상 먹방 체험 웹앱입니다. 터치/클릭 인터랙션으로 쿠키를 먹고, 실시간 동시 접속자 수와 누적 섭취량을 확인할 수 있습니다.",
     image: "/images/projects/dujjoncoo_main.png",
-    images: [],
+    screenshotDir: "dujjoncoo",
     techStack: ["React", "TypeScript", "Vite", "Tailwind CSS", "Firebase"],
     github: "https://github.com/ychany/dujjoncoo",
     demo: "https://dujjoncoo.vercel.app",
@@ -175,7 +175,7 @@ export const projectsData: {
     description:
       "실시간 축구 경기 스코어, 리그 순위, 선수 통계 등을 제공하는 토스 앱인토스 미니앱입니다. 유럽 5대 리그, UEFA 대회, K리그를 지원하며, 날짜별 경기 일정 조회와 상세 통계를 확인할 수 있습니다.",
     image: "/images/projects/kickoff_main.png",
-    images: [],
+    screenshotDir: "kickoff",
     techStack: ["React", "TypeScript", "Vite", "React Router", "Framer Motion"],
     github: "https://github.com/ychany/kickoff",
     demo: "https://kickoff-live.vercel.app",
@@ -197,7 +197,7 @@ export const projectsData: {
     description:
       "담배 한 개비가 남기는 흔적을 시각화하는 교육용 웹앱입니다. 꾹 누르기/더블클릭으로 담배를 피우는 시뮬레이션과 실시간 연기 파티클 효과, 개인/전체 통계를 제공합니다.",
     image: "/images/projects/smoketrace_main.png",
-    images: [],
+    screenshotDir: "smoke-trace",
     techStack: ["React", "TypeScript", "Vite", "Tailwind CSS", "Firebase"],
     github: "https://github.com/ychany/smoke_trace",
     demo: "https://smoketrace.vercel.app",
@@ -220,7 +220,7 @@ export const projectsData: {
       "도시 활력 불균형 문제를 해결하기 위한 AI 기반 동적 리워드 관광 웹앱입니다. 저활력 지역(원도심)에서의 활동에 더 높은 리워드를 제공하여 관광객과 시민의 이동을 유도합니다.",
     award: "충주 청년창업 아이디어 캠프 최우수상",
     image: "/images/projects/chungju_main.png",
-    images: [],
+    screenshotDir: "chungju",
     techStack: ["HTML5", "CSS3", "JavaScript"],
     github: "https://github.com/ychany/chungju_CityBalance",
     demo: "https://chungju-city-balance.vercel.app",
@@ -241,7 +241,7 @@ export const projectsData: {
     description:
       "Next.js 15와 Tailwind CSS를 활용하여 제작한 개인 포트폴리오 웹사이트입니다. 반응형 디자인과 부드러운 스크롤 애니메이션을 적용하였으며, 데이터 기반으로 콘텐츠를 관리합니다.",
     image: "",
-    images: [],
+    screenshotDir: "portfolio",
     techStack: ["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion"],
     github: "https://github.com/ychany/jyc_portfolio",
     demo: "https://jyc-portfolio.vercel.app",

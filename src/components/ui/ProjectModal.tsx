@@ -9,7 +9,7 @@ interface Project {
   subtitle: string;
   description: string;
   image: string;
-  images?: string[];
+  screenshotDir?: string;
   techStack: string[];
   github: string;
   demo: string;
@@ -45,7 +45,7 @@ const techTagColors: Record<string, string> = {
   Vite: "bg-[#646CFF]/20 text-[#646CFF]",
 };
 
-function ImageCarousel({ images, title }: { images: string[]; title: string }) {
+function ScreenshotViewer({ images, title, onClose }: { images: string[]; title: string; onClose: () => void }) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [direction, setDirection] = useState(0);
   const [touchStart, setTouchStart] = useState<number | null>(null);
@@ -60,6 +60,16 @@ function ImageCarousel({ images, title }: { images: string[]; title: string }) {
     },
     [images.length]
   );
+
+  useEffect(() => {
+    const handleKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") onClose();
+      if (e.key === "ArrowRight") paginate(1);
+      if (e.key === "ArrowLeft") paginate(-1);
+    };
+    document.addEventListener("keydown", handleKey);
+    return () => document.removeEventListener("keydown", handleKey);
+  }, [onClose, paginate]);
 
   const handleTouchStart = (e: React.TouchEvent) => {
     setTouchStart(e.touches[0].clientX);
@@ -81,77 +91,95 @@ function ImageCarousel({ images, title }: { images: string[]; title: string }) {
   };
 
   return (
-    <div className="mb-6">
-      <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">
-        스크린샷
-      </h3>
-      <div className="relative">
-        {/* Carousel */}
-        <div
-          className="relative aspect-video bg-gray-100 dark:bg-gray-800 rounded-xl overflow-hidden"
-          onTouchStart={handleTouchStart}
-          onTouchEnd={handleTouchEnd}
+    <motion.div
+      className="fixed inset-0 z-[60] bg-black/90 flex flex-col items-center justify-center"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      onClick={onClose}
+    >
+      {/* Header */}
+      <div className="absolute top-0 left-0 right-0 flex items-center justify-between px-4 py-3 z-10">
+        <span className="text-white/80 text-sm font-medium">
+          {title} - {currentIndex + 1} / {images.length}
+        </span>
+        <button
+          onClick={onClose}
+          className="w-9 h-9 bg-white/10 hover:bg-white/20 rounded-full flex items-center justify-center text-white transition-colors cursor-pointer"
         >
-          <AnimatePresence initial={false} custom={direction} mode="popLayout">
-            <motion.img
-              key={currentIndex}
-              src={images[currentIndex]}
-              alt={`${title} screenshot ${currentIndex + 1}`}
-              className="absolute inset-0 w-full h-full object-contain bg-gray-100 dark:bg-gray-800"
-              custom={direction}
-              variants={variants}
-              initial="enter"
-              animate="center"
-              exit="exit"
-              transition={{ duration: 0.3, ease: "easeInOut" }}
-              draggable={false}
-            />
-          </AnimatePresence>
-        </div>
-
-        {/* Navigation Arrows */}
-        {images.length > 1 && (
-          <>
-            <button
-              onClick={() => paginate(-1)}
-              className="absolute left-2 top-1/2 -translate-y-1/2 w-9 h-9 bg-black/40 hover:bg-black/60 rounded-full flex items-center justify-center text-white transition-colors cursor-pointer"
-            >
-              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-              </svg>
-            </button>
-            <button
-              onClick={() => paginate(1)}
-              className="absolute right-2 top-1/2 -translate-y-1/2 w-9 h-9 bg-black/40 hover:bg-black/60 rounded-full flex items-center justify-center text-white transition-colors cursor-pointer"
-            >
-              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-              </svg>
-            </button>
-          </>
-        )}
-
-        {/* Dots Indicator */}
-        {images.length > 1 && (
-          <div className="flex justify-center gap-1.5 mt-3">
-            {images.map((_, idx) => (
-              <button
-                key={idx}
-                onClick={() => {
-                  setDirection(idx > currentIndex ? 1 : -1);
-                  setCurrentIndex(idx);
-                }}
-                className={`w-2 h-2 rounded-full transition-all cursor-pointer ${
-                  idx === currentIndex
-                    ? "bg-teal-500 w-6"
-                    : "bg-gray-300 dark:bg-gray-600 hover:bg-gray-400"
-                }`}
-              />
-            ))}
-          </div>
-        )}
+          <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
       </div>
-    </div>
+
+      {/* Image */}
+      <div
+        className="relative w-full h-full flex items-center justify-center px-14"
+        onClick={(e) => e.stopPropagation()}
+        onTouchStart={handleTouchStart}
+        onTouchEnd={handleTouchEnd}
+      >
+        <AnimatePresence initial={false} custom={direction} mode="popLayout">
+          <motion.img
+            key={currentIndex}
+            src={images[currentIndex]}
+            alt={`${title} screenshot ${currentIndex + 1}`}
+            className="max-w-full max-h-[80vh] object-contain rounded-lg"
+            custom={direction}
+            variants={variants}
+            initial="enter"
+            animate="center"
+            exit="exit"
+            transition={{ duration: 0.3, ease: "easeInOut" }}
+            draggable={false}
+          />
+        </AnimatePresence>
+      </div>
+
+      {/* Navigation Arrows */}
+      {images.length > 1 && (
+        <>
+          <button
+            onClick={(e) => { e.stopPropagation(); paginate(-1); }}
+            className="absolute left-3 top-1/2 -translate-y-1/2 w-10 h-10 bg-white/10 hover:bg-white/20 rounded-full flex items-center justify-center text-white transition-colors cursor-pointer"
+          >
+            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+            </svg>
+          </button>
+          <button
+            onClick={(e) => { e.stopPropagation(); paginate(1); }}
+            className="absolute right-3 top-1/2 -translate-y-1/2 w-10 h-10 bg-white/10 hover:bg-white/20 rounded-full flex items-center justify-center text-white transition-colors cursor-pointer"
+          >
+            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+            </svg>
+          </button>
+        </>
+      )}
+
+      {/* Dots */}
+      {images.length > 1 && (
+        <div className="absolute bottom-6 flex gap-1.5">
+          {images.map((_, idx) => (
+            <button
+              key={idx}
+              onClick={(e) => {
+                e.stopPropagation();
+                setDirection(idx > currentIndex ? 1 : -1);
+                setCurrentIndex(idx);
+              }}
+              className={`w-2 h-2 rounded-full transition-all cursor-pointer ${
+                idx === currentIndex
+                  ? "bg-teal-400 w-6"
+                  : "bg-white/40 hover:bg-white/60"
+              }`}
+            />
+          ))}
+        </div>
+      )}
+    </motion.div>
   );
 }
 
@@ -160,6 +188,23 @@ export default function ProjectModal({
   isOpen,
   onClose,
 }: ProjectModalProps) {
+  const [showScreenshots, setShowScreenshots] = useState(false);
+  const [screenshots, setScreenshots] = useState<string[]>([]);
+
+  // 모달 열릴 때 스크린샷 폴더에서 이미지 불러오기
+  useEffect(() => {
+    if (isOpen && project?.screenshotDir) {
+      fetch(`/api/screenshots?dir=${encodeURIComponent(project.screenshotDir)}`)
+        .then((res) => res.json())
+        .then((data) => setScreenshots(data.images || []))
+        .catch(() => setScreenshots([]));
+    }
+    if (!isOpen) {
+      setShowScreenshots(false);
+      setScreenshots([]);
+    }
+  }, [isOpen, project?.screenshotDir]);
+
   // ESC 키로 닫기
   useEffect(() => {
     const handleEsc = (e: KeyboardEvent) => {
@@ -318,10 +363,30 @@ export default function ProjectModal({
                   {project.description}
                 </p>
 
-                {/* Screenshots Carousel */}
-                {project.images && project.images.length > 0 && (
-                  <ImageCarousel images={project.images} title={project.title} />
+                {/* Screenshots Button */}
+                {screenshots && screenshots.length > 0 && (
+                  <button
+                    onClick={() => setShowScreenshots(true)}
+                    className="mb-6 inline-flex items-center gap-2 px-5 py-3 bg-teal-500 hover:bg-teal-600 text-white font-medium rounded-xl transition-colors cursor-pointer shadow-md"
+                  >
+                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                    </svg>
+                    스크린샷 보기
+                    <span className="text-sm text-white/80">({screenshots.length})</span>
+                  </button>
                 )}
+
+                {/* Screenshots Fullscreen Viewer */}
+                <AnimatePresence>
+                  {showScreenshots && screenshots && screenshots.length > 0 && (
+                    <ScreenshotViewer
+                      images={screenshots}
+                      title={project.title}
+                      onClose={() => setShowScreenshots(false)}
+                    />
+                  )}
+                </AnimatePresence>
 
                 {/* Features */}
                 {project.features.length > 0 && (
