@@ -17,9 +17,9 @@ export const profileData = {
 const getAboutDetails = () => [
   { icon: "user", label: "이름", value: "조영찬" },
   { icon: "calendar", label: "생년월일", value: "04.04.03" },
-  { icon: "location", label: "위치", value: "서울특별시 광진구" },
+  { icon: "location", label: "위치", value: "충청북도 충주시\n서울특별시 광진구" },
   { icon: "phone", label: "연락처", value: "010-9855-5344" },
-  { icon: "email", label: "이메일", value: "tigerbone@naver.com" },
+  { icon: "email", label: "이메일", value: "tigerbone@naver.com\ndudcks5344@konkuk.ac.kr" },
   { icon: "education", label: "학력", value: getEducationString() },
 ];
 
