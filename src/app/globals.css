@@ -194,3 +194,92 @@ body {
 ::-webkit-scrollbar-thumb:hover {
   background: var(--color-gray-500);
 }
+
+/* Print Styles */
+@media print {
+  @page {
+    size: A4;
+    margin: 15mm 10mm;
+  }
+
+  * {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+    color-adjust: exact !important;
+  }
+
+  html {
+    scroll-behavior: auto;
+  }
+
+  body {
+    overflow: visible !important;
+  }
+
+  /* 헤더, 스크롤 버튼, 모바일 메뉴 숨김 */
+  header,
+  [data-scroll-top],
+  .fixed {
+    display: none !important;
+  }
+
+  /* 섹션 패딩 축소 */
+  .section {
+    padding: 2rem 0 !important;
+  }
+
+  /* 어두운 배경 섹션 → 흰 배경 + 검정 텍스트 */
+  #archiving,
+  #contact,
+  footer {
+    background: white !important;
+    color: #171717 !important;
+  }
+
+  #archiving *,
+  #contact *,
+  footer * {
+    color: #171717 !important;
+  }
+
+  /* 스킬 섹션 배경 유지 (민트색) */
+  #skills {
+    -webkit-print-color-adjust: exact !important;
+  }
+
+  /* 인쇄 시 애니메이션/트랜지션 비활성화 */
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+
+  /* 링크 뒤 URL 표시 안함 */
+  a[href^="http"]::after {
+    content: none !important;
+  }
+
+  /* 페이지 분할 방지 */
+  #about,
+  #achievements,
+  #skills,
+  #archiving,
+  #career {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  /* 프로젝트 카드 분할 방지 */
+  #projects > div > div > div {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  /* 이미지 페이지 넘침 방지 */
+  img {
+    max-width: 100% !important;
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+}

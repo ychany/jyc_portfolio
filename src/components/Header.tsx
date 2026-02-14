@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { profileData } from "@/data/portfolio";
 import ThemeToggle from "@/components/ui/ThemeToggle";
@@ -18,6 +18,19 @@ const navItems = [
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isGeneratingPdf, setIsGeneratingPdf] = useState(false);
+
+  const handleDownloadPdf = useCallback(async () => {
+    if (isGeneratingPdf) return;
+    setIsGeneratingPdf(true);
+    setIsMobileMenuOpen(false);
+    try {
+      const { generatePdf } = await import("@/lib/generatePdf");
+      await generatePdf();
+    } finally {
+      setIsGeneratingPdf(false);
+    }
+  }, [isGeneratingPdf]);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -88,6 +101,29 @@ export default function Header() {
                   {item.label}
                 </motion.a>
               ))}
+              <motion.button
+                onClick={handleDownloadPdf}
+                disabled={isGeneratingPdf}
+                className={`p-2 rounded-lg transition-colors ${
+                  isScrolled
+                    ? "text-gray-600 dark:text-gray-300 hover:text-teal-600 hover:bg-gray-100 dark:hover:bg-gray-800"
+                    : "text-gray-600 dark:text-gray-300 hover:text-teal-600 hover:bg-white/20"
+                } disabled:opacity-50`}
+                whileHover={{ y: -2 }}
+                whileTap={{ scale: 0.95 }}
+                title="PDF 다운로드"
+              >
+                {isGeneratingPdf ? (
+                  <svg className="w-5 h-5 animate-spin" fill="none" viewBox="0 0 24 24">
+                    <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
+                    <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z" />
+                  </svg>
+                ) : (
+                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                  </svg>
+                )}
+              </motion.button>
               <ThemeToggle />
             </nav>
 
@@ -157,6 +193,31 @@ export default function Header() {
                     {item.label}
                   </motion.a>
                 ))}
+                <motion.button
+                  className="text-2xl font-semibold text-teal-500 py-3 border-b border-gray-100 dark:border-gray-800 text-left flex items-center gap-3"
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: 0.1 * navItems.length }}
+                  onClick={handleDownloadPdf}
+                  disabled={isGeneratingPdf}
+                >
+                  {isGeneratingPdf ? (
+                    <>
+                      <svg className="w-6 h-6 animate-spin" fill="none" viewBox="0 0 24 24">
+                        <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
+                        <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z" />
+                      </svg>
+                      PDF 생성 중...
+                    </>
+                  ) : (
+                    <>
+                      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}>
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                      </svg>
+                      PDF 다운로드
+                    </>
+                  )}
+                </motion.button>
               </nav>
             </div>
           </motion.div>
