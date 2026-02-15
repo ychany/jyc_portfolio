@@ -114,6 +114,7 @@ export const projectsData: {
   role?: string;
   team?: string;
   notes?: string[];
+  extraLinks?: { label: string; demo?: string; github?: string }[];
 }[] = [
   {
     id: 1,
@@ -287,22 +288,30 @@ export const projectsData: {
   },
   {
     id: 7,
-    title: "Portfolio",
-    subtitle: "개인 포트폴리오 웹사이트",
+    title: "Portfolio & DevLinks",
+    subtitle: "개인 포트폴리오 & 링크 모음 웹사이트",
     description:
-      "Next.js 15와 Tailwind CSS를 활용하여 제작한 개인 포트폴리오 웹사이트입니다. 반응형 디자인과 부드러운 스크롤 애니메이션을 적용하였으며, 데이터 기반으로 콘텐츠를 관리합니다.",
+      "Next.js 15와 Tailwind CSS를 활용하여 제작한 개인 포트폴리오 웹사이트와, 프로젝트·소셜 링크를 한곳에 모은 DevLinks 페이지입니다. 반응형 디자인과 부드러운 스크롤 애니메이션을 적용하였으며, 데이터 기반으로 콘텐츠를 관리합니다.",
     image: "/images/portfolio_main.png",
     screenshotDir: "portfolio",
     techStack: ["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion"],
     github: "https://github.com/ychany/jyc_portfolio",
     demo: "https://jyc-portfolio.vercel.app",
-    period: "2026.01",
+    period: "2026.01 / 2026.02",
     role: "1인 개발 (기획, 디자인, 개발)",
     features: [
       "반응형 디자인 (모바일, 태블릿, 데스크톱)",
       "Framer Motion 스크롤 애니메이션",
       "섹션별 구성 (About, Skills, Projects, Career, Contact)",
       "데이터 기반 콘텐츠 관리",
+      "DevLinks - 프로젝트·소셜 링크 모음 페이지",
+    ],
+    extraLinks: [
+      {
+        label: "DevLinks",
+        demo: "https://jyc-devlinks.vercel.app",
+        github: "https://github.com/ychany/jyc_devlinks",
+      },
     ],
   },
 ];
