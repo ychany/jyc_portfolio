@@ -10,6 +10,7 @@ export const profileData = {
   blog: "",
   linkedin: "https://www.linkedin.com/in/ychany-23809637b/",
   instagram: "https://www.instagram.com/y_chany_04/",
+  devlinks: "https://jyc-devlinks.vercel.app",
   location: "Seoul, South Korea",
 };
 
@@ -81,6 +82,17 @@ export const archivingData = [
       "경력 및 프로젝트 이력",
       "기술 스택 및 역량",
       "네트워킹",
+    ],
+  },
+  {
+    name: "DevLinks",
+    url: "https://jyc-devlinks.vercel.app",
+    icon: "link",
+    description: "개발 관련 링크 모음입니다.",
+    details: [
+      "프로젝트 바로가기",
+      "소셜 링크 모음",
+      "포트폴리오 링크트리",
     ],
   },
 ];
