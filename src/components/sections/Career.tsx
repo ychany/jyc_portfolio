@@ -17,7 +17,7 @@ export default function Career() {
           {experienceData.map((item, index) => (
             <FadeIn key={index} delay={0.1 * index}>
               <motion.div
-                className="bg-white dark:bg-gray-900 rounded-2xl p-6 md:p-8 shadow-sm"
+                className="bg-white dark:bg-gray-900 rounded-2xl p-6 md:p-8 shadow-sm border border-gray-200 dark:border-gray-700"
                 whileHover={{ scale: 1.01 }}
                 transition={{ duration: 0.2 }}
               >

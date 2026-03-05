@@ -6,10 +6,10 @@ import { profileData } from "@/data/portfolio";
 const footerNavItems = [
   { label: "About", href: "#about" },
   { label: "Achievements", href: "#achievements" },
+  { label: "Career", href: "#career" },
   { label: "Skills", href: "#skills" },
   { label: "Archiving", href: "#archiving" },
   { label: "Projects", href: "#projects" },
-  { label: "Career", href: "#career" },
   { label: "Contact", href: "#contact" },
 ];
 
