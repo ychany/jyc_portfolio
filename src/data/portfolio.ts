@@ -404,6 +404,16 @@ export const awardData: {
 // 활동 경험
 export const activityData = [
   {
+    organization: "디프만(DEPROMEET) 18th",
+    role: "Web",
+    period: "2026.03 ~",
+    description: "디자이너와 개발자가 서비스 기획부터 런칭까지 함께 경험하는 성장추구형 커뮤니티",
+    links: {
+      website: "https://www.depromeet.com",
+      github: "https://github.com/depromeet/",
+    },
+  },
+  {
     organization: "건국대학교 정보운영팀",
     role: "교내 근로",
     period: "2024.03 ~ 2025.01",
