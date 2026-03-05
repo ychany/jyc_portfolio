@@ -9,8 +9,8 @@ export default function Career() {
   if (experienceData.length === 0) return null;
 
   return (
-    <section id="career" className="py-12 md:py-16 bg-gray-50 dark:bg-gray-800">
-      <div className="max-w-4xl mx-auto px-6">
+    <section id="career" className="py-12 md:py-16 bg-white dark:bg-gray-900">
+      <div className="max-w-6xl mx-auto px-6">
         <SectionTitle>Career</SectionTitle>
 
         <div className="space-y-6">
