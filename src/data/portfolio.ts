@@ -8,7 +8,7 @@ export const profileData = {
   email: "tigerbone@naver.com",
   github: "https://github.com/ychany",
   blog: "",
-  linkedin: "https://www.linkedin.com/in/ychany-23809637b/",
+  linkedin: "https://www.linkedin.com/in/ychany",
   instagram: "https://www.instagram.com/y_chany_04/",
   devlinks: "https://jyc-devlinks.vercel.app",
   location: "Seoul, South Korea",
@@ -75,7 +75,7 @@ export const archivingData = [
   },
   {
     name: "LinkedIn",
-    url: "https://www.linkedin.com/in/ychany-23809637b/",
+    url: "https://www.linkedin.com/in/ychany",
     icon: "linkedin",
     description: "프로페셔널 네트워크입니다.",
     details: [
