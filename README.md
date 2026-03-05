@@ -47,11 +47,11 @@
 |---------|-------------|
 | Hero | 인트로 + CTA 버튼 |
 | About | 자기소개 + 기본 정보 |
-| Achievements | 자격증 + 수상 (수상작 프로젝트 연결) |
-| Skills | 기술 스택 |
-| Archiving | GitHub, 블로그 링크 |
-| Projects | 프로젝트 목록 + 상세 모달 + 스크린샷 갤러리 |
+| Achievements | 자격증 + 수상 + 경험(디프만 등) |
 | Career | 경력 사항 |
+| Skills | 기술 스택 |
+| Archiving | GitHub, 블로그, LinkedIn 링크 |
+| Projects | 프로젝트 목록 + 상세 모달 + 스크린샷 갤러리 |
 | Contact | 연락처 |
 
 ## Getting Started
