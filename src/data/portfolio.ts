@@ -147,6 +147,14 @@ export const projectsData: {
       "관광객·소상공인·지자체·플랫폼 4자 상생 구조 설계",
       "Flutter, FastAPI, DGX SPARK를 활용하며 기획부터 개발까지 가장 큰 성장을 이룬 프로젝트",
     ],
+    pdf: {
+      label: "발표자료 다운로드",
+      url: "/ppt/코레일해커톤_동행열차.pdf",
+    },
+    video: {
+      label: "시연 영상 보기",
+      url: "/images/projects/screenshots/korail/demo.mp4",
+    },
   },
   {
     id: 2,
