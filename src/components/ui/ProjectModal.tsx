@@ -21,6 +21,8 @@ interface Project {
   team?: string;
   notes?: string[];
   extraLinks?: { label: string; demo?: string; github?: string }[];
+  pdf?: { label: string; url: string };
+  video?: { label: string; url: string };
 }
 
 interface ProjectModalProps {
@@ -211,6 +213,7 @@ export default function ProjectModal({
 }: ProjectModalProps) {
   const [showScreenshots, setShowScreenshots] = useState(false);
   const [screenshots, setScreenshots] = useState<string[]>([]);
+  const [showVideo, setShowVideo] = useState(false);
 
   // 모달 열릴 때 스크린샷 폴더에서 이미지 불러오기 (캐시 적용)
   useEffect(() => {
@@ -233,6 +236,7 @@ export default function ProjectModal({
     if (!isOpen) {
       setShowScreenshots(false);
       setScreenshots([]);
+      setShowVideo(false);
     }
   }, [isOpen, project?.screenshotDir]);
 
@@ -394,18 +398,33 @@ export default function ProjectModal({
                   {project.description}
                 </p>
 
-                {/* Screenshots Button */}
-                {screenshots && screenshots.length > 0 && (
-                  <button
-                    onClick={() => setShowScreenshots(true)}
-                    className="mb-6 inline-flex items-center gap-2 px-5 py-3 bg-teal-500 hover:bg-teal-600 text-white font-medium rounded-xl transition-colors cursor-pointer shadow-md"
-                  >
-                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                    </svg>
-                    스크린샷 보기
-                    <span className="text-sm text-white/80">({screenshots.length})</span>
-                  </button>
+                {/* Screenshots & Video Buttons */}
+                {((screenshots && screenshots.length > 0) || project.video) && (
+                  <div className="mb-6 flex flex-wrap gap-3">
+                    {screenshots && screenshots.length > 0 && (
+                      <button
+                        onClick={() => setShowScreenshots(true)}
+                        className="inline-flex items-center gap-2 px-5 py-3 bg-teal-500 hover:bg-teal-600 text-white font-medium rounded-xl transition-colors cursor-pointer shadow-md"
+                      >
+                        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                        </svg>
+                        스크린샷 보기
+                        <span className="text-sm text-white/80">({screenshots.length})</span>
+                      </button>
+                    )}
+                    {project.video && (
+                      <button
+                        onClick={() => setShowVideo(true)}
+                        className="inline-flex items-center gap-2 px-5 py-3 bg-purple-500 hover:bg-purple-600 text-white font-medium rounded-xl transition-colors cursor-pointer shadow-md"
+                      >
+                        <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                          <path d="M8 5v14l11-7z" />
+                        </svg>
+                        {project.video.label}
+                      </button>
+                    )}
+                  </div>
                 )}
 
                 {/* Screenshots Fullscreen Viewer */}
@@ -416,6 +435,41 @@ export default function ProjectModal({
                       title={project.title}
                       onClose={() => setShowScreenshots(false)}
                     />
+                  )}
+                </AnimatePresence>
+
+                {/* Video Fullscreen Viewer */}
+                <AnimatePresence>
+                  {showVideo && project.video && (
+                    <motion.div
+                      className="fixed inset-0 z-[60] bg-black/90 flex flex-col items-center justify-center p-4"
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      exit={{ opacity: 0 }}
+                      onClick={() => setShowVideo(false)}
+                    >
+                      <div className="absolute top-0 left-0 right-0 flex items-center justify-between px-4 py-3 z-10">
+                        <span className="text-white/80 text-sm font-medium">
+                          {project.title} - 시연 영상
+                        </span>
+                        <button
+                          onClick={() => setShowVideo(false)}
+                          className="w-9 h-9 bg-white/10 hover:bg-white/20 rounded-full flex items-center justify-center text-white transition-colors cursor-pointer"
+                        >
+                          <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                          </svg>
+                        </button>
+                      </div>
+                      <video
+                        src={project.video.url}
+                        controls
+                        autoPlay
+                        playsInline
+                        className="max-w-full max-h-[85vh] rounded-lg shadow-2xl"
+                        onClick={(e) => e.stopPropagation()}
+                      />
+                    </motion.div>
                   )}
                 </AnimatePresence>
 
@@ -555,6 +609,30 @@ export default function ProjectModal({
                         className="w-5 h-5 object-contain"
                       />
                       Toss 미니앱
+                    </a>
+                  )}
+                  {project.pdf && (
+                    <a
+                      href={project.pdf.url}
+                      download
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 px-5 py-2.5 bg-indigo-500 text-white font-medium rounded-full hover:bg-indigo-600 transition-colors cursor-pointer"
+                    >
+                      <svg
+                        className="w-5 h-5"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M4 16v1a2 2 0 002 2h12a2 2 0 002-2v-1m-4-4l-4 4m0 0l-4-4m4 4V4"
+                        />
+                      </svg>
+                      {project.pdf.label}
                     </a>
                   )}
                   {project.extraLinks?.map((link) => (

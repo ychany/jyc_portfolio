@@ -115,6 +115,8 @@ export const projectsData: {
   team?: string;
   notes?: string[];
   extraLinks?: { label: string; demo?: string; github?: string }[];
+  pdf?: { label: string; url: string };
+  video?: { label: string; url: string };
 }[] = [
   {
     id: 1,
@@ -286,6 +288,35 @@ export const projectsData: {
       "스켈레톤 로딩 UI 등 사용자 경험 최적화",
     ],
   },
+    {
+    id: 8,
+    title: "마음충전소",
+    subtitle: "제주 독거노인 × 청년·여행객 매칭 커뮤니티 서비스",
+    description:
+      "제주 독거노인과 청년·여행객을 매칭해 함께 시간을 보내며 제주를 경험하도록 돕는 커뮤니티 연결 서비스입니다. 매칭 구조를 통해 세대·지역 간 교류를 만들어내는 것을 목표로 합니다.",
+    image: "/images/projects/goormthon_main.png",
+    screenshotDir: "goornthon",
+    techStack: ["React", "TypeScript", "Tailwind CSS"],
+    github: "https://github.com/goormthon-5",
+    demo: "",
+    period: "2026.03",
+    role: "Frontend",
+    team: "구름톤 17기 팀 프로젝트",
+    features: [
+      "제주 독거노인과 청년·여행객 1:1 매칭",
+      "함께 시간을 보내며 제주를 경험하는 동행 구조",
+      "매칭 기반 세대·지역 간 교류 커뮤니티",
+    ],
+    pdf: {
+      label: "발표자료 다운로드",
+      url: "/ppt/최종_발표자료_마음충전소.pdf",
+    },
+    video: {
+      label: "시연 영상 보기",
+      url: "/images/projects/screenshots/goornthon/demo.mov",
+    },
+  },
+
   {
     id: 7,
     title: "Portfolio & DevLinks",
@@ -314,6 +345,7 @@ export const projectsData: {
       },
     ],
   },
+  
 ];
 
 // 경력
@@ -411,6 +443,15 @@ export const activityData = [
     links: {
       website: "https://www.depromeet.com",
       github: "https://github.com/depromeet/",
+    },
+  },
+  {
+    organization: "구름톤(goormthon) in JEJU 17th",
+    role: "Frontend",
+    period: "2026.03",
+    description: "제주도 현지 교육과 함께 진행되는 제주 관련 주제 해커톤",
+    links: {
+      github: "https://github.com/goormthon-5",
     },
   },
   {
