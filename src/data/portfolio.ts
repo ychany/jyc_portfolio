@@ -311,7 +311,7 @@ export const projectsData: {
     techStack: ["React", "TypeScript", "Tailwind CSS"],
     github: "https://github.com/goormthon-5",
     demo: "",
-    period: "2026.03",
+    period: "2026.04",
     role: "Frontend",
     team: "팀 마음충전소 (구름톤 17기)",
     features: [
@@ -459,7 +459,7 @@ export const activityData = [
   {
     organization: "구름톤(goormthon) in JEJU 17th",
     role: "Frontend",
-    period: "2026.03",
+    period: "2026.04",
     description: "제주도 현지 교육과 함께 진행되는 제주 관련 주제 해커톤",
     links: {
       github: "https://github.com/goormthon-5",
