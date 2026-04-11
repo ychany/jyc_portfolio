@@ -147,7 +147,20 @@ export default function Achievements() {
                   >
                     <div className="flex items-start justify-between gap-4">
                       <div className="flex flex-col">
-                        <span className="font-medium text-gray-900 dark:text-white">{activity.organization}</span>
+                        <div className="flex items-center gap-2 flex-wrap">
+                          <span className="font-medium text-gray-900 dark:text-white">{activity.organization}</span>
+                          {"projectId" in activity && activity.projectId && (
+                            <button
+                              onClick={() => scrollToProject(activity.projectId!)}
+                              className="text-xs text-teal-600 hover:text-teal-700 font-medium flex items-center gap-1 cursor-pointer"
+                            >
+                              프로젝트
+                              <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                              </svg>
+                            </button>
+                          )}
+                        </div>
                         <span className="text-sm text-indigo-600 dark:text-indigo-400 font-medium">{activity.role}</span>
                       </div>
                       <span className="text-sm text-indigo-600 font-medium bg-indigo-50 dark:bg-indigo-900/30 dark:text-indigo-400 px-3 py-1 rounded-full whitespace-nowrap shrink-0">

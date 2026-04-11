@@ -310,7 +310,7 @@ export const projectsData: {
     screenshotDir: "goornthon",
     techStack: ["React", "TypeScript", "Tailwind CSS"],
     github: "https://github.com/goormthon-5",
-    demo: "",
+    demo: "https://samchoon-irang.vercel.app",
     period: "2026.04",
     role: "Frontend",
     team: "팀 마음충전소 (구름톤 17기)",
@@ -464,6 +464,7 @@ export const activityData = [
     links: {
       github: "https://github.com/goormthon-5",
     },
+    projectId: 8,
   },
   {
     organization: "건국대학교 정보운영팀",
