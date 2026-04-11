@@ -146,15 +146,15 @@ export default function Achievements() {
                     transition={{ delay: 0.1 * index }}
                   >
                     <div className="flex items-start justify-between gap-4">
-                      <div className="flex flex-col">
-                        <div className="flex items-center gap-2 flex-wrap">
+                      <div className="flex flex-col min-w-0 flex-1">
+                        <div className="flex items-center gap-2">
                           <span className="font-medium text-gray-900 dark:text-white">{activity.organization}</span>
                           {"projectId" in activity && activity.projectId && (
                             <button
                               onClick={() => scrollToProject(activity.projectId!)}
-                              className="text-xs text-teal-600 hover:text-teal-700 font-medium flex items-center gap-1 cursor-pointer"
+                              className="ml-auto mr-2 text-xs text-teal-600 hover:text-teal-700 font-medium flex items-center gap-1 cursor-pointer whitespace-nowrap"
                             >
-                              프로젝트
+                              프로젝트 바로가기
                               <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                               </svg>
@@ -170,8 +170,21 @@ export default function Achievements() {
                     <p className="mt-2 text-sm text-gray-600 dark:text-gray-300 leading-relaxed">
                       {activity.description}
                     </p>
-                    {activity.links && (activity.links.website || activity.links.github) && (
-                      <div className="mt-3 flex gap-2">
+                    {activity.links && ("demo" in activity.links && activity.links.demo || activity.links.website || activity.links.github) && (
+                      <div className="mt-3 flex gap-2 flex-wrap">
+                        {"demo" in activity.links && activity.links.demo && (
+                          <a
+                            href={activity.links.demo as string}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-teal-100 dark:bg-teal-900/30 text-teal-700 dark:text-teal-400 rounded-full text-xs font-medium hover:bg-teal-200 dark:hover:bg-teal-900/50 transition-colors"
+                          >
+                            <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                            </svg>
+                            Demo
+                          </a>
+                        )}
                         {activity.links.website && (
                           <a
                             href={activity.links.website}
