@@ -416,7 +416,7 @@ export default function ProjectModal({
                     {project.video && (
                       <button
                         onClick={() => setShowVideo(true)}
-                        className="inline-flex items-center gap-2 px-5 py-3 bg-purple-500 hover:bg-purple-600 text-white font-medium rounded-xl transition-colors cursor-pointer shadow-md"
+                        className="inline-flex items-center gap-2 px-5 py-3 bg-gradient-to-r from-slate-800 to-slate-700 hover:from-slate-900 hover:to-slate-800 text-white font-medium rounded-xl transition-all cursor-pointer shadow-md"
                       >
                         <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
                           <path d="M8 5v14l11-7z" />
@@ -617,7 +617,7 @@ export default function ProjectModal({
                       download
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 px-5 py-2.5 bg-indigo-500 text-white font-medium rounded-full hover:bg-indigo-600 transition-colors cursor-pointer"
+                      className="inline-flex items-center gap-2 px-5 py-2.5 bg-emerald-500 text-white font-medium rounded-full hover:bg-emerald-600 transition-colors cursor-pointer shadow-sm"
                     >
                       <svg
                         className="w-5 h-5"
