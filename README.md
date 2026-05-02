@@ -30,8 +30,11 @@
 - **프로젝트 상세 모달** - 프로젝트별 상세 정보 모달 팝업
 - **스크린샷 갤러리** - 전체화면 캐러셀 뷰어 (스와이프/키보드 지원)
 - **자동 스크린샷 탐색** - 폴더에 이미지만 넣으면 자동 반영 (API Route)
-- **실시간 Firebase 연동** - 프로젝트 실시간 통계 표시
+- **시연 영상 뷰어** - 프로젝트별 데모 영상 풀스크린 재생 (`video` 필드)
+- **발표자료 다운로드** - 프로젝트별 PDF 다운로드 버튼 (`pdf` 필드)
+- **활동 → 프로젝트 연결** - 활동 카드의 "프로젝트 바로가기"로 해당 프로젝트로 스크롤 이동
 - **수상작 연결** - 수상 내역에서 해당 프로젝트로 스크롤 이동
+- **실시간 Firebase 연동** - 프로젝트 실시간 통계 표시
 - **Toss 미니앱 연동** - 토스 앱인토스 바로가기 버튼
 - **PDF 다운로드** - 포트폴리오를 PDF로 내보내기
 - **공유 기능** - Web Share API / 클립보드 복사
@@ -47,7 +50,7 @@
 |---------|-------------|
 | Hero | 인트로 + CTA 버튼 |
 | About | 자기소개 + 기본 정보 |
-| Achievements | 자격증 + 수상 + 경험(디프만 등) |
+| Achievements | 자격증 + 수상 + 활동 (디프만, 구름톤 등 — 프로젝트 연결) |
 | Career | 경력 사항 |
 | Skills | 기술 스택 |
 | Archiving | GitHub, 블로그, LinkedIn 링크 |
@@ -118,17 +121,11 @@ src/
     ├── dujjoncoo-firebase.ts   # Firebase 설정
     └── generatePdf.ts          # PDF 생성
 public/
-└── images/
-    └── projects/
-        ├── screenshots/        # 프로젝트별 스크린샷 (자동 탐색)
-        │   ├── korail/
-        │   ├── foothub/
-        │   ├── dujjoncoo/
-        │   ├── kickoff/
-        │   ├── smoke-trace/
-        │   ├── chungju/
-        │   └── portfolio/
-        └── *_main.png          # 프로젝트 대표 이미지
+├── images/
+│   └── projects/
+│       ├── screenshots/        # 프로젝트별 스크린샷 + 시연 영상 (자동 탐색)
+│       └── *_main.png          # 프로젝트 대표 이미지
+├── ppt/                        # 발표자료 PDF
 └── og-image.png                # OG 미리보기 이미지
 ```
 
@@ -157,12 +154,16 @@ export const projectsData = [
     techStack: ["React", "TypeScript"],
     github: "https://github.com/...",
     demo: "https://...",
-    tossApp: "https://minion.toss.im/...",  // 선택
+    tossApp: "https://minion.toss.im/...",  // 선택 - 토스 미니앱
+    pdf: {                                  // 선택 - 발표자료 다운로드 버튼
+      label: "발표자료 다운로드",
+      url: "/ppt/파일명.pdf",
+    },
+    video: {                                // 선택 - 시연 영상 보기 버튼
+      label: "시연 영상 보기",
+      url: "/images/projects/screenshots/foldername/demo.mp4",
+    },
     // ...
   },
 ];
 ```
-
-## License
-
-MIT
