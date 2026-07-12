@@ -366,7 +366,50 @@ export const projectsData: {
       },
     ],
   },
-  
+  {
+    id: 9,
+    title: "PiKi (피키)",
+    subtitle: "같이 고르는 쇼핑 토너먼트 · 위시리스트 소비 결정 서비스",
+    description:
+      "사고 싶은 것은 많지만 선택이 어려워 구매를 미루는 사용자를 위해, 쌓인 위시리스트에서 '먼저 살 것'을 골라주는 소비 결정 서비스입니다. 두 상품을 하나씩 비교하는 1:1 토너먼트로 최종 1순위를 정하고, 친구와 함께 고르는 소셜 토너먼트까지 지원합니다.",
+    award: "디프만 18기 대상",
+    image: "/images/projects/piki_main.png",
+    screenshotDir: "piki",
+    techStack: ["Next.js", "React", "TypeScript", "Zustand", "TanStack Query", "Zod", "React Native", "Turborepo"],
+    github: "https://github.com/TeamPiKi/PiKi-Client",
+    demo: "https://piki.day",
+    period: "2026.03 ~ 2026.06",
+    role: "Web (Front-end)",
+    team: "10인 팀 프로젝트 (디프만 18기)",
+    features: [
+      "링크 기반 상품 저장 (여러 쇼핑몰 위시리스트 통합)",
+      "두 상품씩 비교하는 1:1 토너먼트로 최종 1순위 결정",
+      "친구와 함께 고르는 실시간 소셜 토너먼트",
+      "결과를 영수증 형태로 시각화 및 이미지 공유",
+      "보류함 & 재판단 알림으로 방치된 위시 재방문 유도",
+      "RN(Expo) WebView로 Next.js 웹앱을 감싼 앱 배포 (iOS/Android)",
+    ],
+    notes: [
+      "핵심 WOW 기능인 1:1 토너먼트를 진입·진행·결과(영수증)까지 전 화면 설계·구현",
+      "라운드가 빠르게 넘어갈 때 발생하던 race condition을 상태 처리 로직 개선으로 해결",
+      "SSE 기반 실시간 소셜 토너먼트로 기능 확장",
+      "리프레시 토큰 동시 호출로 자동 로그아웃되던 문제를 rotation 대응 dedupe로 해결",
+      "GA4·Firebase Analytics 연동으로 사용자 행동 퍼널 분석 및 이탈 지점 개선",
+      "컴포넌트 배치·API 네이밍 등 팀 공통 개발 컨벤션 정리로 협업 생산성 기여",
+      "App Store·Google Play 양 스토어 배포 경험",
+    ],
+    extraLinks: [
+      {
+        label: "App Store",
+        demo: "https://apps.apple.com/kr/app/piki-%EA%B0%99%EC%9D%B4-%EA%B3%A0%EB%A5%B4%EB%8A%94-%EC%87%BC%ED%95%91-%ED%86%A0%EB%84%88%EB%A8%BC%ED%8A%B8/id6777101805",
+      },
+      {
+        label: "Google Play",
+        demo: "https://play.google.com/store/apps/details?id=day.no30s.piki",
+      },
+    ],
+  },
+
 ];
 
 // 경력
@@ -452,6 +495,12 @@ export const awardData: {
     date: "2026.01",
     projectId: 3,
   },
+  {
+    title: "디프만(DEPROMEET) 18기",
+    prize: "대상",
+    date: "2026.06",
+    projectId: 9,
+  },
 ];
 
 // 활동 경험
@@ -459,12 +508,14 @@ export const activityData = [
   {
     organization: "디프만(DEPROMEET) 18th",
     role: "Web",
-    period: "2026.03 ~",
-    description: "디자이너와 개발자가 서비스 기획부터 런칭까지 함께 경험하는 성장추구형 커뮤니티",
+    period: "2026.03 ~ 2026.06",
+    description: "디자이너와 개발자가 서비스 기획부터 런칭까지 함께 경험하는 성장추구형 커뮤니티 (PiKi 프로젝트 대상 수상)",
     links: {
+      demo: "https://piki.day",
       website: "https://www.depromeet.com",
-      github: "https://github.com/depromeet/",
+      github: "https://github.com/TeamPiKi/PiKi-Client",
     },
+    projectId: 9,
   },
   {
     organization: "구름톤(goormthon) in JEJU 17th",

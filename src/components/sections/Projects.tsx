@@ -375,7 +375,35 @@ export default function Projects() {
                     )}
                     {project.extraLinks?.map((link) => (
                       <span key={link.label} className="contents">
-                        {link.demo && (
+                        {link.demo && link.label === "App Store" && (
+                          <a
+                            href={link.demo}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-block"
+                          >
+                            <img
+                              src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg"
+                              alt="Download on the App Store"
+                              className="h-10"
+                            />
+                          </a>
+                        )}
+                        {link.demo && link.label === "Google Play" && (
+                          <a
+                            href={link.demo}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-block"
+                          >
+                            <img
+                              src="/images/google-play-badge.png"
+                              alt="Get it on Google Play"
+                              className="h-13 -my-1.5"
+                            />
+                          </a>
+                        )}
+                        {link.demo && link.label !== "App Store" && link.label !== "Google Play" && (
                           <a
                             href={link.demo}
                             target="_blank"
