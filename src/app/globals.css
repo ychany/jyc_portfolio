@@ -153,6 +153,11 @@ body {
 .tag-github { background: #181717; color: #fff; }
 .tag-vercel { background: #000000; color: #fff; }
 .tag-vite { background: #646CFF; color: #fff; }
+.tag-tanstack { background: #FF4154; color: #fff; }
+.tag-zustand { background: #443E38; color: #fff; }
+.tag-react-native { background: #61DAFB; color: #000; }
+.tag-expo { background: #1B1F23; color: #fff; }
+.tag-riverpod { background: #40D0FD; color: #000; }
 
 /* Responsive */
 @media (min-width: 640px) {

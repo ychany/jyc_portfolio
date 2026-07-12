@@ -38,10 +38,14 @@ export const aboutData = {
 export const skillsData = {
   frontend: [
     { name: "React", level: 80, tagClass: "tag-react" },
+    { name: "Next.js", level: 80, tagClass: "tag-nextjs" },
     { name: "TypeScript", level: 75, tagClass: "tag-typescript" },
     { name: "JavaScript", level: 85, tagClass: "tag-javascript" },
     { name: "HTML5", level: 90, tagClass: "tag-html" },
     { name: "CSS3", level: 85, tagClass: "tag-css" },
+    { name: "Tailwind CSS", level: 80, tagClass: "tag-tailwind" },
+    { name: "TanStack Query", level: 75, tagClass: "tag-tanstack" },
+    { name: "Zustand", level: 75, tagClass: "tag-zustand" },
     { name: "Vite", level: 70, tagClass: "tag-vite" },
   ],
   backend: [
@@ -51,8 +55,11 @@ export const skillsData = {
     { name: "Firebase", level: 65, tagClass: "tag-firebase" },
   ],
   mobile: [
+    { name: "React Native", level: 70, tagClass: "tag-react-native" },
+    { name: "Expo", level: 70, tagClass: "tag-expo" },
     { name: "Flutter", level: 70, tagClass: "tag-flutter" },
     { name: "Dart", level: 70, tagClass: "tag-dart" },
+    { name: "Riverpod", level: 65, tagClass: "tag-riverpod" },
   ],
   tools: [
     { name: "Git", level: 85, tagClass: "tag-git" },
