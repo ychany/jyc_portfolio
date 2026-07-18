@@ -17,7 +17,7 @@ export const profileData = {
 // aboutData의 details를 동적으로 생성하는 함수
 const getAboutDetails = () => [
   { icon: "user", label: "이름", value: "조영찬 (04.04.03)" },
-  { icon: "briefcase", label: "소속", value: "(주) 서울소프트 재직 중" },
+  { icon: "briefcase", label: "소속", value: "(주) 서울소프트 (2025.02~2026.07)\n건국대학교 스마트ICT융합공학과 재학" },
   { icon: "education", label: "학력", value: getEducationString() },
   { icon: "phone", label: "연락처", value: "010-9855-5344" },
   { icon: "email", label: "이메일", value: "tigerbone@naver.com\ndudcks5344@konkuk.ac.kr" },
@@ -435,9 +435,9 @@ export const experienceData: {
   {
     title: "서울소프트",
     role: "모빌리티 개발팀 · Full-Stack Developer",
-    period: "2025.02 - 현재",
+    period: "2025.02 - 2026.07",
     description:
-      "운수사(버스·택시) 대상 ERP 서비스를 개발·제공하는 IT 기업에서 Full-Stack 개발자로 근무 중입니다.",
+      "운수사(버스·택시) 대상 ERP 서비스를 개발·제공하는 IT 기업에서 Full-Stack 개발자로 근무했습니다.",
     details: [
       "배차, 급여, 자재, 인사관리 등 핵심 업무 모듈 개발 및 유지보수",
       "Django 기반 MVT 패턴을 활용한 웹 서비스 개발",
@@ -519,7 +519,7 @@ export const activityData = [
   {
     organization: "디프만(DEPROMEET) 18th",
     role: "Web",
-    period: "2026.03 ~",
+    period: "2026.03 ~ 2026.06",
     description: "디자이너와 개발자가 서비스 기획부터 런칭까지 함께 경험하는 성장추구형 커뮤니티 (PiKi 프로젝트 대상 수상)",
     links: {
       demo: "https://piki.day",
