@@ -3,6 +3,7 @@ import { ThemeProvider } from "next-themes";
 import "./globals.css";
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://yeongchan.dev"),
   title: "조영찬 | Developer",
   description: "개발자 조영찬의 포트폴리오입니다.",
   keywords: ["개발자", "포트폴리오", "React", "Next.js", "Flutter", "Django", "조영찬"],
@@ -11,7 +12,7 @@ export const metadata: Metadata = {
     title: "조영찬 | Developer",
     description: "개발자 조영찬의 포트폴리오입니다.",
     type: "website",
-    url: "https://jyc-portfolio.vercel.app",
+    url: "https://yeongchan.dev",
     images: [
       {
         url: "/og-image.png",

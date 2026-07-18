@@ -21,7 +21,7 @@
 | **Theme** | next-themes | ^0.4.6 | 다크/라이트 모드 |
 | **Lint** | ESLint | ^9 (`eslint-config-next`) | 코드 품질 |
 | **Build Tooling** | PostCSS | — | Tailwind v4 처리 |
-| **Deploy** | Vercel | — | 호스팅 (https://jyc-portfolio.vercel.app) |
+| **Deploy** | Vercel | — | 호스팅 (https://yeongchan.dev) |
 
 ### 실행 스크립트
 | 명령어 | 설명 |

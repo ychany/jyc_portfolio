@@ -2,7 +2,7 @@
 
 개인 포트폴리오 웹사이트입니다.
 
-**Live Demo**: https://jyc-portfolio.vercel.app
+**Live Demo**: https://yeongchan.dev
 
 ![Next.js](https://img.shields.io/badge/Next.js-15-black?style=flat-square&logo=next.js)
 ![TypeScript](https://img.shields.io/badge/TypeScript-5.0-3178C6?style=flat-square&logo=typescript)

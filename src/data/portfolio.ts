@@ -355,7 +355,7 @@ export const projectsData: {
     screenshotDir: "portfolio",
     techStack: ["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion"],
     github: "https://github.com/ychany/jyc_portfolio",
-    demo: "https://jyc-portfolio.vercel.app",
+    demo: "https://yeongchan.dev",
     period: "2026.01 / 2026.02",
     role: "1인 개발 (기획, 디자인, 개발)",
     features: [
