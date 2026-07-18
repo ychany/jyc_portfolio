@@ -17,11 +17,11 @@ export const profileData = {
 // aboutData의 details를 동적으로 생성하는 함수
 const getAboutDetails = () => [
   { icon: "user", label: "이름", value: "조영찬 (04.04.03)" },
-  { icon: "briefcase", label: "소속", value: "(주) 서울소프트 (2025.02~2026.07)\n건국대학교 스마트ICT융합공학과 재학" },
   { icon: "education", label: "학력", value: getEducationString() },
+  { icon: "briefcase", label: "분야", value: "Frontend 개발\n웹 · 앱 서비스" },
   { icon: "phone", label: "연락처", value: "010-9855-5344" },
   { icon: "email", label: "이메일", value: "tigerbone@naver.com\ndudcks5344@konkuk.ac.kr" },
-  { icon: "location", label: "위치", value: "충청북도 충주시\n서울특별시 광진구" },
+  { icon: "location", label: "위치", value: "서울특별시 광진구" },
 ];
 
 export const aboutData = {
@@ -515,7 +515,14 @@ export const awardData: {
 ];
 
 // 활동 경험
-export const activityData = [
+export const activityData: {
+  organization: string;
+  role: string;
+  period: string;
+  description: string;
+  links?: { demo?: string; website?: string; github?: string };
+  projectId?: number;
+}[] = [
   {
     organization: "디프만(DEPROMEET) 18th",
     role: "Web",
@@ -523,7 +530,7 @@ export const activityData = [
     description: "디자이너와 개발자가 서비스 기획부터 런칭까지 함께 경험하는 성장추구형 커뮤니티 (PiKi 프로젝트 대상 수상)",
     links: {
       demo: "https://piki.day",
-      website: "https://www.depromeet.com",
+      // website: "https://www.depromeet.com", // 숨김
       github: "https://github.com/TeamPiKi/PiKi-Client",
     },
     projectId: 9,
@@ -535,7 +542,7 @@ export const activityData = [
     description: "제주도 현지 교육과 함께 진행되는 제주 관련 주제 해커톤",
     links: {
       demo: "https://samchoon-irang.vercel.app",
-      website: "https://9oormthon.goorm.io/collection",
+      // website: "https://9oormthon.goorm.io/collection", // 숨김
       github: "https://github.com/goormthon-5/goormthon-5-frontend",
     },
     projectId: 8,
