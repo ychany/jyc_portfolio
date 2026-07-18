@@ -389,7 +389,7 @@ export const projectsData: {
     techStack: ["Next.js", "React", "TypeScript", "Zustand", "TanStack Query", "Zod", "React Native", "Turborepo"],
     github: "https://github.com/TeamPiKi/PiKi-Client",
     demo: "https://piki.day",
-    period: "2026.03 ~ 2026.06",
+    period: "2026.03 ~",
     role: "Web (Front-end)",
     team: "10인 팀 프로젝트 (디프만 18기)",
     features: [
@@ -519,7 +519,7 @@ export const activityData = [
   {
     organization: "디프만(DEPROMEET) 18th",
     role: "Web",
-    period: "2026.03 ~ 2026.06",
+    period: "2026.03 ~",
     description: "디자이너와 개발자가 서비스 기획부터 런칭까지 함께 경험하는 성장추구형 커뮤니티 (PiKi 프로젝트 대상 수상)",
     links: {
       demo: "https://piki.day",
