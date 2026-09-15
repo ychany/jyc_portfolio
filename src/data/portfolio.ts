@@ -430,10 +430,10 @@ export const projectsData: {
     screenshotDir: "offway",
     techStack: ["Flutter", "Dart", "Riverpod", "GoRouter", "Dio", "Naver Map API", "Firebase"],
     github: "https://github.com/team-offway/offway-frontend",
-    demo: "https://offway.cloud",
+    demo: "https://apps.apple.com/app/id6793610290",
     period: "2026.07 ~",
     role: "Frontend (iOS 앱 · 공유 웹)",
-    team: "2인 팀 프로젝트 (Frontend 1 · Backend 1)",
+    team: "3인 팀 프로젝트 (Frontend 1 · Backend 1 · Designer 1)",
     features: [
       "잔여 연차·이동수단·일정 밀도 기반 여행 코스 추천 위저드",
       "인구감소지역 89곳 대상 도달 가능 지역 계산 및 날짜별 코스 생성",
@@ -454,8 +454,8 @@ export const projectsData: {
     ],
     extraLinks: [
       {
-        label: "App Store",
-        demo: "https://apps.apple.com/app/id6793610290",
+        label: "Web",
+        demo: "https://offway.cloud",
       },
       {
         label: "Backend",
