@@ -139,7 +139,7 @@ export const projectsData: {
     github: "https://github.com/dusagong/korail_donghang_train_app",
     demo: "",
     period: "2025.11 ~ 12",
-    role: "백엔드 개발",
+    role: "기획 · 개발 (2인 팀)",
     team: "2인 팀 프로젝트",
     features: [
       "AI 기반 맞춤형 여행 코스 추천 (만남승강장)",
@@ -417,6 +417,49 @@ export const projectsData: {
       {
         label: "Google Play",
         demo: "https://play.google.com/store/apps/details?id=day.no30s.piki",
+      },
+    ],
+  },
+  {
+    id: 10,
+    title: "OffWay",
+    subtitle: "연차로 떠나는 로컬 여행 플래너",
+    description:
+      "남은 연차로 다녀올 수 있는 인구감소지역 여행 코스를 추천하는 iOS 앱입니다. 잔여 연차·이동수단·일정 취향을 입력받아 도달 가능한 지역과 날짜별 코스를 만들어 주고, 확정한 코스는 연차에서 자동 차감됩니다.",
+    image: "/images/projects/offway_main.png",
+    screenshotDir: "offway",
+    techStack: ["Flutter", "Dart", "Riverpod", "GoRouter", "Dio", "Naver Map API", "Firebase"],
+    github: "https://github.com/team-offway/offway-frontend",
+    demo: "https://offway.cloud",
+    period: "2026.07 ~",
+    role: "Frontend (iOS 앱 · 공유 웹)",
+    team: "2인 팀 프로젝트 (Frontend 1 · Backend 1)",
+    features: [
+      "잔여 연차·이동수단·일정 밀도 기반 여행 코스 추천 위저드",
+      "인구감소지역 89곳 대상 도달 가능 지역 계산 및 날짜별 코스 생성",
+      "코스 확정 시 연차 자동 차감 (반반차 0.25일 단위 지원)",
+      "카카오·Apple·구글 소셜 로그인 (JWT + iOS Keychain 저장)",
+      "카카오톡·링크·이미지·웹 페이지 코스 공유",
+      "네이버 지도 연동 코스 경로 시각화",
+      "FCM 푸시 알림 (기기 등록 및 포그라운드 배너)",
+    ],
+    notes: [
+      "App Store 정식 출시 (2026.08) — 기획부터 배포·운영까지 프론트엔드 전 과정 담당",
+      "Riverpod 3 + GoRouter 기반 feature 단위 아키텍처 설계 (data/domain/presentation 분리)",
+      "Dio 인터셉터로 JWT 자동 첨부 및 토큰 갱신 처리",
+      "인구감소지역 89곳 전수 조사 결과 콘텐츠가 40건 수준인 지역을 확인하고, 코스 최대 2박3일 정책을 도출",
+      "앱 없이도 코스를 볼 수 있는 공유 웹(offway.cloud)을 별도 구축 — 백엔드 CORS 제약을 서버리스 프록시로 우회",
+      "GitHub Actions로 포맷·분석·테스트 검사 및 브랜치 보호 적용",
+      "TestFlight 사전 배포로 검증 후 정식 출시",
+    ],
+    extraLinks: [
+      {
+        label: "App Store",
+        demo: "https://apps.apple.com/app/id6793610290",
+      },
+      {
+        label: "Backend",
+        github: "https://github.com/team-offway/core",
       },
     ],
   },
