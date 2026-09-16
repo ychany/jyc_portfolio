@@ -451,8 +451,8 @@ export const projectsData: {
       "Dio 인터셉터로 JWT 자동 첨부 및 토큰 갱신 처리",
       "인구감소지역 89곳 전수 조사 결과 콘텐츠가 40건 수준인 지역을 확인하고, 코스 최대 2박3일 정책을 도출",
       "앱 없이도 코스를 볼 수 있는 공유 웹(offway.cloud)을 별도 구축 — 백엔드 CORS 제약을 서버리스 프록시로 우회",
-      "ActivityKit 기반 Live Activity를 Swift Widget Extension으로 구현 — Flutter는 지역·남은 날·날짜만 넘기고 문구 조립은 네이티브 한 곳에서 처리해 표시 규칙을 단일화",
-      "iOS 최소 버전은 15.0을 유지하고 Live Activity 확장만 16.1로 분리 — 15.x 기기는 다이나믹 아일랜드 하드웨어가 없어 앱 최소 버전을 올려도 얻는 것이 없다고 판단",
+      "Live Activity를 Swift Widget Extension으로 구현 — 문구 조립을 네이티브 한 곳에 모아 표시 규칙 단일화",
+      "iOS 최소 15.0은 유지하고 Live Activity만 16.1로 분리 — 15.x 기기엔 다이나믹 아일랜드가 없어 앱 버전을 올릴 이유가 없음",
       "잠금화면 문구 규칙과 서버 content-state 계약을 Swift 네이티브 테스트(xcodebuild)로 검증",
       "GitHub Actions로 포맷·분석·테스트 검사 및 브랜치 보호 적용",
       "TestFlight 사전 배포로 검증 후 정식 출시",
@@ -567,6 +567,18 @@ export const activityData: {
   links?: { demo?: string; website?: string; github?: string };
   projectId?: number;
 }[] = [
+  {
+    organization: "SOPT 39th",
+    role: "Web",
+    period: "2026.09 ~ 현재",
+    description: "기획·디자인·개발이 함께 서비스를 만드는 대학생 연합 IT 벤처 창업 동아리",
+  },
+  {
+    organization: "GDGoC 건국대학교",
+    role: "Member",
+    period: "2026.09 ~ 현재",
+    description: "Google Developer Groups on Campus, 세미나와 스터디로 함께 성장하는 개발자 커뮤니티",
+  },
   {
     organization: "디프만(DEPROMEET) 18th",
     role: "Web",
