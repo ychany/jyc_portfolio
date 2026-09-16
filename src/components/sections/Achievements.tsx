@@ -170,6 +170,8 @@ export default function Achievements() {
                     <p className="mt-2 text-sm text-gray-600 dark:text-gray-300 leading-relaxed">
                       {activity.description}
                     </p>
+                    {/* 활동 링크(Live · Website · GitHub) - 주석처리
+                        프로젝트 섹션에 동일한 바로가기가 있어 중복 제거
                     {activity.links && ("demo" in activity.links && activity.links.demo || activity.links.website || activity.links.github) && (
                       <div className="mt-3 flex gap-2 flex-wrap">
                         {"demo" in activity.links && activity.links.demo && (
@@ -213,6 +215,7 @@ export default function Achievements() {
                         )}
                       </div>
                     )}
+                    */}
                   </motion.div>
                 ))}
               </div>
