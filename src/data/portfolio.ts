@@ -426,7 +426,7 @@ export const projectsData: {
     subtitle: "연차로 떠나는 로컬 여행 플래너",
     description:
       "남은 연차로 다녀올 수 있는 인구감소지역 여행 코스를 추천하는 iOS 앱입니다. 잔여 연차·이동수단·일정 취향을 입력받아 도달 가능한 지역과 날짜별 코스를 만들어 주고, 확정한 코스는 연차에서 자동 차감됩니다.",
-    image: "/images/projects/offway_main.png",
+    image: "/images/projects/offway_main_v2.png",
     screenshotDir: "offway",
     techStack: ["Flutter", "Dart", "Riverpod", "GoRouter", "Dio", "Naver Map API", "Firebase", "ActivityKit", "Swift"],
     github: "https://github.com/team-offway/offway-frontend",
