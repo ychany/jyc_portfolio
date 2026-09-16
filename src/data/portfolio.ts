@@ -575,7 +575,7 @@ export const activityData: {
     description: "디자이너와 개발자가 서비스 기획부터 런칭까지 함께 경험하는 성장추구형 커뮤니티 (PiKi 프로젝트 대상 수상)",
     links: {
       demo: "https://piki.day",
-      // website: "https://www.depromeet.com", // 숨김
+      website: "https://www.depromeet.com",
       github: "https://github.com/TeamPiKi/PiKi-Client",
     },
     projectId: 9,
@@ -587,7 +587,7 @@ export const activityData: {
     description: "제주도 현지 교육과 함께 진행되는 제주 관련 주제 해커톤",
     links: {
       demo: "https://samchoon-irang.vercel.app",
-      // website: "https://9oormthon.goorm.io/collection", // 숨김
+      website: "https://9oormthon.goorm.io/collection",
       github: "https://github.com/goormthon-5/goormthon-5-frontend",
     },
     projectId: 8,
@@ -597,12 +597,18 @@ export const activityData: {
     role: "Member",
     period: "2026.09 ~",
     description: "Google Developer Groups on Campus, 세미나와 스터디로 함께 성장하는 개발자 커뮤니티",
+    links: {
+      website: "https://www.gdgoc-konkuk.com",
+    },
   },
   {
     organization: "솝트(SOPT) 39th",
     role: "Web Developer",
     period: "2026.09 ~",
     description: "기획·디자인·개발이 함께 서비스를 만드는 대학생 연합 IT 벤처 창업 동아리",
+    links: {
+      website: "https://www.sopt.org",
+    },
   },
   {
     organization: "건국대학교 정보운영팀",
