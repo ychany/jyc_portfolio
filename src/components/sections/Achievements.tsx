@@ -120,7 +120,7 @@ export default function Achievements() {
         </div>
 
         {/* 활동 - 하나의 박스로 묶기 */}
-        {activityData.filter((a) => a.links).length > 0 && (
+        {activityData.filter((a) => !a.hidden).length > 0 && (
           <FadeIn delay={0.2}>
             <motion.div
               className="bg-white dark:bg-gray-900 rounded-2xl p-6 md:p-8 shadow-sm mt-8"
@@ -136,7 +136,7 @@ export default function Achievements() {
                 <h3 className="text-xl font-bold text-gray-900 dark:text-white">활동</h3>
               </div>
               <div className="space-y-5">
-                {activityData.filter((a) => a.links).map((activity, index) => (
+                {activityData.filter((a) => !a.hidden).map((activity, index) => (
                   <motion.div
                     key={activity.organization}
                     className="pb-5 border-b border-gray-100 dark:border-gray-700 last:border-0 last:pb-0"

@@ -566,19 +566,8 @@ export const activityData: {
   description: string;
   links?: { demo?: string; website?: string; github?: string };
   projectId?: number;
+  hidden?: boolean;
 }[] = [
-  {
-    organization: "SOPT 39th",
-    role: "Web",
-    period: "2026.09 ~ 현재",
-    description: "기획·디자인·개발이 함께 서비스를 만드는 대학생 연합 IT 벤처 창업 동아리",
-  },
-  {
-    organization: "GDGoC 건국대학교",
-    role: "Member",
-    period: "2026.09 ~ 현재",
-    description: "Google Developer Groups on Campus, 세미나와 스터디로 함께 성장하는 개발자 커뮤니티",
-  },
   {
     organization: "디프만(DEPROMEET) 18th",
     role: "Web",
@@ -604,16 +593,30 @@ export const activityData: {
     projectId: 8,
   },
   {
+    organization: "GDG on Campus Konkuk University 26-27",
+    role: "Member",
+    period: "2026.09 ~",
+    description: "Google Developer Groups on Campus, 세미나와 스터디로 함께 성장하는 개발자 커뮤니티",
+  },
+  {
+    organization: "솝트(SOPT) 39th",
+    role: "Web Developer",
+    period: "2026.09 ~",
+    description: "기획·디자인·개발이 함께 서비스를 만드는 대학생 연합 IT 벤처 창업 동아리",
+  },
+  {
     organization: "건국대학교 정보운영팀",
     role: "교내 근로",
     period: "2024.03 ~ 2025.01",
     description: "행정, 지정업무, 학교 홈페이지 모니터링 및 피드백, 신규사업 참여",
+    hidden: true,
   },
   {
     organization: "중앙대학교 산학협력단",
     role: "인공지능 연구보조원",
     period: "2023.09",
     description: "딥러닝 학습에 필요한 데이터 전처리",
+    hidden: true,
   },
 ];
 
