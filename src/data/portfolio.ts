@@ -45,6 +45,7 @@ export const skillsData = {
     { name: "HTML5", level: 90, tagClass: "tag-html" },
     { name: "CSS3", level: 85, tagClass: "tag-css" },
     { name: "Tailwind CSS", level: 80, tagClass: "tag-tailwind" },
+    { name: "Framer Motion", level: 70, tagClass: "tag-framer" },
     { name: "TanStack Query", level: 75, tagClass: "tag-tanstack" },
     { name: "Zustand", level: 75, tagClass: "tag-zustand" },
     { name: "Vite", level: 70, tagClass: "tag-vite" },
@@ -52,6 +53,7 @@ export const skillsData = {
   backend: [
     { name: "Python", level: 80, tagClass: "tag-python" },
     { name: "Django", level: 75, tagClass: "tag-django" },
+    { name: "FastAPI", level: 60, tagClass: "tag-fastapi" },
     { name: "MySQL", level: 70, tagClass: "tag-mysql" },
     { name: "Firebase", level: 65, tagClass: "tag-firebase" },
   ],
@@ -61,11 +63,15 @@ export const skillsData = {
     { name: "Flutter", level: 70, tagClass: "tag-flutter" },
     { name: "Dart", level: 70, tagClass: "tag-dart" },
     { name: "Riverpod", level: 65, tagClass: "tag-riverpod" },
+    { name: "Swift", level: 55, tagClass: "tag-swift" },
   ],
   tools: [
     { name: "Git", level: 85, tagClass: "tag-git" },
     { name: "GitHub", level: 85, tagClass: "tag-github" },
+    { name: "GitHub Actions", level: 65, tagClass: "tag-github-actions" },
     { name: "Vercel", level: 75, tagClass: "tag-vercel" },
+    { name: "Figma", level: 70, tagClass: "tag-figma" },
+    { name: "Google Analytics", level: 65, tagClass: "tag-google-analytics" },
   ],
 };
 

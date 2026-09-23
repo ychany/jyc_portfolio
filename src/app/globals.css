@@ -158,6 +158,11 @@ body {
 .tag-react-native { background: #61DAFB; color: #000; }
 .tag-expo { background: #1B1F23; color: #fff; }
 .tag-riverpod { background: #40D0FD; color: #000; }
+.tag-framer { background: #0055FF; color: #fff; }
+.tag-fastapi { background: #009688; color: #fff; }
+.tag-swift { background: #F05138; color: #fff; }
+.tag-github-actions { background: #2088FF; color: #fff; }
+.tag-google-analytics { background: #E37400; color: #fff; }
 
 /* Responsive */
 @media (min-width: 640px) {
