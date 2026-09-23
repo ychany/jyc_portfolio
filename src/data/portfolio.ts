@@ -6,6 +6,7 @@ export const profileData = {
   role: "Developer",
   tagline: "끊임없이 성장하는 개발자",
   email: "tigerbone@naver.com",
+  website: "https://yeongchan.dev",
   github: "https://github.com/ychany",
   blog: "",
   linkedin: "https://www.linkedin.com/in/ychany",
