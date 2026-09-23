@@ -2,7 +2,7 @@
 
 export const profileData = {
   name: "조영찬",
-  nameEn: "Youngchan Jo",
+  nameEn: "Yeongchan Jo",
   role: "Developer",
   tagline: "끊임없이 성장하는 개발자",
   email: "tigerbone@naver.com",
