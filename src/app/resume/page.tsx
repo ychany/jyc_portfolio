@@ -221,21 +221,24 @@ export default function ResumePage() {
 
         <p className="mt-[3.5mm] text-[9.5pt] leading-[1.6] text-gray-700">{introduction}</p>
 
-        <Section title="기술 스택">
-          <div className="space-y-[1.2mm]">
-            {skillGroups.map((group) => (
-              <div key={group.label} className="flex items-start gap-[3mm]">
-                <span className="w-[18mm] shrink-0 pt-[0.3mm] text-[8.5pt] font-bold text-teal-700">
-                  {group.label}
+        <Section title="학력">
+          {educationData.map((edu) => (
+            <div key={edu.title} className="flex items-baseline justify-between gap-[3mm]">
+              <p className="text-[9.5pt]">
+                <b className="font-bold">{edu.title}</b>
+                <span className="ml-[2mm] text-gray-700">
+                  {edu.major}
+                  {edu.minor && ` (부전공: ${edu.minor})`}
                 </span>
-                <div className="flex flex-wrap gap-[1.2mm]">
-                  {group.items.map((skill) => (
-                    <Chip key={skill.name}>{skill.name}</Chip>
-                  ))}
-                </div>
-              </div>
-            ))}
-          </div>
+                {edu.description && (
+                  <span className="ml-[2mm] text-[8.5pt] text-gray-500">{edu.description}</span>
+                )}
+              </p>
+              <span className="shrink-0 text-[8.5pt] font-semibold text-teal-600">
+                {edu.period}
+              </span>
+            </div>
+          ))}
         </Section>
 
         <Section title="경력">
@@ -268,26 +271,6 @@ export default function ResumePage() {
                   ))}
                 </div>
               )}
-            </div>
-          ))}
-        </Section>
-
-        <Section title="학력">
-          {educationData.map((edu) => (
-            <div key={edu.title} className="flex items-baseline justify-between gap-[3mm]">
-              <p className="text-[9.5pt]">
-                <b className="font-bold">{edu.title}</b>
-                <span className="ml-[2mm] text-gray-700">
-                  {edu.major}
-                  {edu.minor && ` (부전공: ${edu.minor})`}
-                </span>
-                {edu.description && (
-                  <span className="ml-[2mm] text-[8.5pt] text-gray-500">{edu.description}</span>
-                )}
-              </p>
-              <span className="shrink-0 text-[8.5pt] font-semibold text-teal-600">
-                {edu.period}
-              </span>
             </div>
           ))}
         </Section>
@@ -347,6 +330,23 @@ export default function ResumePage() {
             </div>
           </Section>
         )}
+
+        <Section title="기술 스택">
+          <div className="space-y-[1.2mm]">
+            {skillGroups.map((group) => (
+              <div key={group.label} className="flex items-start gap-[3mm]">
+                <span className="w-[18mm] shrink-0 pt-[0.3mm] text-[8.5pt] font-bold text-teal-700">
+                  {group.label}
+                </span>
+                <div className="flex flex-wrap gap-[1.2mm]">
+                  {group.items.map((skill) => (
+                    <Chip key={skill.name}>{skill.name}</Chip>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+        </Section>
 
         {projects.length > 0 && (
           <section className="mt-[4mm]">
