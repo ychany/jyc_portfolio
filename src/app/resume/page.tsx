@@ -182,11 +182,12 @@ export default function ResumePage() {
   const projects = [...projectsData].reverse();
 
   const contacts = [
-    { label: "Email", value: profileData.email, href: `mailto:${profileData.email}` },
-    { label: "Phone", value: phone, href: `tel:${phone.replace(/-/g, "")}` },
-    { label: "Portfolio", value: displayUrl(profileData.website), href: profileData.website },
-    { label: "GitHub", value: displayUrl(profileData.github), href: profileData.github },
-    { label: "LinkedIn", value: displayUrl(profileData.linkedin), href: profileData.linkedin },
+    // private: '개인정보 가리기'를 켜면 화면과 PDF에서 모두 빠지는 항목
+    { label: "Email", value: profileData.email, href: `mailto:${profileData.email}`, private: true },
+    { label: "Phone", value: phone, href: `tel:${phone.replace(/-/g, "")}`, private: true },
+    { label: "Portfolio", value: displayUrl(profileData.website), href: profileData.website, private: false },
+    { label: "GitHub", value: displayUrl(profileData.github), href: profileData.github, private: false },
+    { label: "LinkedIn", value: displayUrl(profileData.linkedin), href: profileData.linkedin, private: false },
   ].filter((c) => c.value);
 
   return (
@@ -207,7 +208,7 @@ export default function ResumePage() {
           </div>
           <dl className="grid grid-cols-[auto_auto] gap-x-[3mm] gap-y-[0.8mm] text-[8.5pt]">
             {contacts.map((c) => (
-              <div key={c.label} className="contents">
+              <div key={c.label} className="contents" data-private={c.private || undefined}>
                 <dt className="font-semibold text-gray-500">{c.label}</dt>
                 <dd>
                   <a href={c.href} className="text-gray-800">

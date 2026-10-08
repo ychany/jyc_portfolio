@@ -164,6 +164,11 @@ body {
 .tag-github-actions { background: #2088FF; color: #fff; }
 .tag-google-analytics { background: #E37400; color: #fff; }
 
+/* 이력서: '개인정보 가리기'를 켜면 이메일·전화번호를 화면과 인쇄에서 모두 숨긴다 */
+html[data-hide-private] [data-private] {
+  display: none !important;
+}
+
 /* Responsive */
 @media (min-width: 640px) {
   :root {
