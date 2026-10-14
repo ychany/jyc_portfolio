@@ -192,7 +192,7 @@ export default function ResumePage() {
 
   return (
     <div className="min-h-screen overflow-x-auto bg-gray-200 py-[10mm] print:overflow-visible print:bg-white print:py-0">
-      <ResumeToolbar />
+      <ResumeToolbar projects={projects.map((p) => ({ id: p.id, title: p.title }))} />
 
       <main className="mx-auto w-[210mm] bg-white px-[10mm] py-[15mm] text-gray-900 shadow-lg print:w-auto print:p-0 print:shadow-none">
         {/* 프로필 — 전역 인쇄 스타일이 <header>를 숨기므로 div 사용 */}
@@ -350,13 +350,36 @@ export default function ResumePage() {
         </Section>
 
         {projects.length > 0 && (
-          <section className="mt-[4mm]">
-            <div className="break-inside-avoid">
-              <SectionTitle>{`프로젝트 (${projects.length})`}</SectionTitle>
-              <ProjectCard project={projects[0]} />
-            </div>
-            {projects.slice(1).map((project) => (
-              <ProjectCard key={project.id} project={project} />
+          <section className="mt-[4mm]" data-resume-projects>
+            {/* 카드마다 제목 사본을 두고, CSS로 '보이는 첫 카드'의 제목만 표시한다.
+                툴바에서 프로젝트를 빼도 제목이 항상 첫 카드와 같은 페이지에 붙어 다닌다 */}
+            {projects.map((project) => (
+              <div
+                key={project.id}
+                className="resume-project break-inside-avoid"
+                data-resume-project={project.id}
+              >
+                <div className="resume-project-heading">
+                  <SectionTitle>
+                    {/* 일부만 골라 출력하면 '주요 '가 붙는다 (툴바에서 채움) */}
+                    <span data-project-prefix />
+                    프로젝트 (<span data-project-count>{projects.length}</span>)
+                    {/* 일부만 골라 출력할 때만 보인다 (툴바에서 hidden 해제) */}
+                    <span
+                      data-project-note
+                      hidden
+                      className="ml-[2.5mm] text-[8pt] font-normal text-gray-500"
+                    >
+                      모든 프로젝트는{" "}
+                      <a href={profileData.website} className="font-semibold text-teal-700">
+                        {displayUrl(profileData.website)}
+                      </a>
+                      에서 확인할 수 있습니다
+                    </span>
+                  </SectionTitle>
+                </div>
+                <ProjectCard project={project} />
+              </div>
             ))}
             <p className="mt-[2mm] text-center text-[8pt] text-gray-500">
               프로젝트 상세 내용과 스크린샷은{" "}

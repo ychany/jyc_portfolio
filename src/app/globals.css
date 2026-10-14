@@ -169,6 +169,27 @@ html[data-hide-private] [data-private] {
   display: none !important;
 }
 
+/* 이력서: 툴바에서 체크 해제한 프로젝트는 화면과 인쇄에서 모두 숨긴다 */
+.resume-project[data-hidden] {
+  display: none !important;
+}
+
+/* 프로젝트 제목은 '보이는 첫 카드'에만 표시 (나머지 카드의 제목 사본은 숨김) */
+.resume-project-heading {
+  display: none;
+}
+.resume-project:not([data-hidden]) .resume-project-heading {
+  display: block;
+}
+.resume-project:not([data-hidden]) ~ .resume-project .resume-project-heading {
+  display: none;
+}
+
+/* 모든 프로젝트를 해제하면 섹션 전체(안내 문구 포함)를 숨긴다 */
+[data-resume-projects][data-empty] {
+  display: none !important;
+}
+
 /* Responsive */
 @media (min-width: 640px) {
   :root {
