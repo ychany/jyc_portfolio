@@ -295,7 +295,7 @@ export default function ResumePage() {
               </div>
               <p className="mt-[1mm] text-[9pt] text-gray-700">{exp.description}</p>
               <ul className="mt-[1.5mm] space-y-[0.6mm] text-[9pt] text-gray-800">
-                {exp.details.map((d) => (
+                {(exp.resumeDetails ?? exp.details).map((d) => (
                   <li key={d} className="flex gap-[1.5mm]">
                     <span className="text-teal-500">•</span>
                     <span>{d}</span>

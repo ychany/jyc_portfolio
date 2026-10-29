@@ -532,6 +532,8 @@ export const experienceData: {
   period: string;
   description: string;
   details: string[];
+  // 이력서(/resume)에서만 details 대신 보여준다. 포트폴리오 사이트는 details 그대로
+  resumeDetails?: string[];
   techStack?: string[];
 }[] = [
   {
@@ -545,6 +547,15 @@ export const experienceData: {
       "Django 기반 MVT 패턴을 활용한 웹 서비스 개발",
       "기존 레거시 시스템 분석 및 개선",
     ],
+    resumeDetails: [
+      "배차, 급여, 자재, 인사관리 등 핵심 업무 모듈 개발 및 유지보수 (운수사 5곳, 기사 1,000명+ 급여 처리)",
+      "전화로만 받던 고객 문의를 ERP 문의 게시판 + 디스코드 알림으로 제안·구현 → 전 고객사 확대, 6개월간 1,000건+ 문의 처리",
+      "배차 실시간성·급여일·시도 보고 마감 기준으로 문의 우선순위 운영",
+      "배차·수입금 입력 화면에 단축키·자동 채움·예외 입력·화면 배열 개선 → 관련 불편 문의 3개월 내 80%+ 감소",
+      "SQL로 배차·급여 데이터 조회·무결성 검증 및 입력 오류 데이터 정정",
+      "버스 실시간 위치·운수사 현황판 개발 (고객사가 대형 TV로 상시 사용)",
+      "Django 기반 MVT 패턴 웹 서비스 개발, 레거시 시스템 분석 및 개선",
+    ],
     techStack: ["Python", "Django", "JavaScript", "MySQL", "HTML5", "CSS3"],
   },
 ];
@@ -557,7 +568,7 @@ export const educationData = [
     minor: "문화콘텐츠학과",
     role: "스마트ICT융합공학과 (부전공: 문화콘텐츠학과)",
     period: "2023 - 현재",
-    description: "23학번 재학 중",
+    description: "23학번 · 3학년 1학기 재학 중",
     details: [],
   },
 ];
