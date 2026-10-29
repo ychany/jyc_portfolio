@@ -93,6 +93,9 @@ function Chip({ children }: { children: React.ReactNode }) {
 function ProjectCard({ project }: { project: Project }) {
   const links = projectLinks(project);
   const notes = project.notes?.slice(0, MAX_NOTES) ?? [];
+  const hasCaseStudy = Boolean(
+    project.problem || project.actions?.length || project.result?.length,
+  );
 
   return (
     <article className="mb-[3mm] flex gap-[4mm] rounded-[2.5mm] border border-gray-200 p-[3.5mm] break-inside-avoid">
@@ -149,7 +152,41 @@ function ProjectCard({ project }: { project: Project }) {
           {project.description}
         </p>
 
-        {notes.length > 0 && (
+        {hasCaseStudy ? (
+          <div className="mt-[1.8mm] space-y-[1mm] text-[8.5pt] leading-normal text-gray-800">
+            {project.problem && (
+              <p>
+                <b className="font-semibold text-teal-700">문제</b> {project.problem}
+              </p>
+            )}
+            {project.actions && project.actions.length > 0 && (
+              <div>
+                <b className="font-semibold text-teal-700">한 일</b>
+                <ul className="mt-[0.4mm] space-y-[0.4mm]">
+                  {project.actions.map((action) => (
+                    <li key={action} className="flex gap-[1.5mm]">
+                      <span className="text-teal-500">→</span>
+                      <span>{action}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+            {project.result && project.result.length > 0 && (
+              <div>
+                <b className="font-semibold text-teal-700">결과</b>
+                <ul className="mt-[0.4mm] space-y-[0.4mm]">
+                  {project.result.map((r) => (
+                    <li key={r} className="flex gap-[1.5mm] font-medium text-gray-900">
+                      <span className="text-teal-500">★</span>
+                      <span>{r}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+          </div>
+        ) : notes.length > 0 && (
           <ul className="mt-[1.8mm] space-y-[0.6mm] text-[8.5pt] leading-normal text-gray-800">
             {notes.map((note) => (
               <li key={note} className="flex gap-[1.5mm]">

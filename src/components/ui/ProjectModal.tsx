@@ -20,6 +20,9 @@ interface Project {
   role?: string;
   team?: string;
   notes?: string[];
+  problem?: string;
+  actions?: string[];
+  result?: string[];
   extraLinks?: { label: string; demo?: string; github?: string }[];
   pdf?: { label: string; url: string };
   video?: { label: string; url: string };
@@ -476,6 +479,58 @@ export default function ProjectModal({
                     </motion.div>
                   )}
                 </AnimatePresence>
+
+                {/* Case study */}
+                {(project.problem || project.actions?.length || project.result?.length) && (
+                  <div className="mb-6 rounded-xl border border-teal-500/30 bg-teal-50/50 dark:bg-teal-500/5 p-4 space-y-4">
+                    {project.problem && (
+                      <div>
+                        <h3 className="text-sm font-semibold text-teal-700 dark:text-teal-400 mb-1">
+                          문제
+                        </h3>
+                        <p className="text-sm text-gray-700 dark:text-gray-200 leading-relaxed">
+                          {project.problem}
+                        </p>
+                      </div>
+                    )}
+                    {project.actions && project.actions.length > 0 && (
+                      <div>
+                        <h3 className="text-sm font-semibold text-teal-700 dark:text-teal-400 mb-1">
+                          한 일
+                        </h3>
+                        <ul className="space-y-1">
+                          {project.actions.map((action, i) => (
+                            <li
+                              key={i}
+                              className="flex items-start gap-2 text-sm text-gray-700 dark:text-gray-200"
+                            >
+                              <span className="text-teal-500 mt-0.5 flex-shrink-0">→</span>
+                              {action}
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    )}
+                    {project.result && project.result.length > 0 && (
+                      <div>
+                        <h3 className="text-sm font-semibold text-teal-700 dark:text-teal-400 mb-1">
+                          결과
+                        </h3>
+                        <ul className="space-y-1">
+                          {project.result.map((r, i) => (
+                            <li
+                              key={i}
+                              className="flex items-start gap-2 text-sm font-medium text-gray-900 dark:text-white"
+                            >
+                              <span className="text-teal-500 mt-0.5 flex-shrink-0">★</span>
+                              {r}
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    )}
+                  </div>
+                )}
 
                 {/* Features */}
                 {project.features.length > 0 && (
