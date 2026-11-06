@@ -509,6 +509,7 @@ export const projectsData: {
       "인구감소지역 89곳 전수 조사로 콘텐츠가 40건 수준인 지역을 확인하고 코스 최대 2박3일 정책 도출",
       "앱이 없는 사람도 공유받은 코스를 볼 수 있도록 공유 웹(offway.cloud) 별도 구축",
       "다이나믹 아일랜드·위젯으로 앱을 열지 않아도 여행 D-day 확인",
+      "Claude Code를 에이전트로 운영: CLAUDE.md로 작업 규칙을 정하고, GitHub Actions(포맷·분석·테스트)와 브랜치 보호로 AI가 만든 코드도 같은 검사를 거치게 함",
       "TestFlight 사전 배포로 검증 후 정식 출시",
     ],
     result: [
