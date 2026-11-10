@@ -626,6 +626,11 @@ export const awardData: {
     date: "2026.06",
     projectId: 9,
   },
+  {
+    title: "2026 동남권 멀티도메인 모빌리티 비즈니스 해커톤",
+    prize: "장려상",
+    date: "2026.11",
+  },
 ];
 
 // 활동 경험
